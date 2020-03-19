@@ -20,7 +20,12 @@
 </html>
 ```
 
-![img](graph/1133627-20170802222531537-562547241.png)
+<span style="color: green; font-size: 30px">栏目一</span><br/>
+<span style="color: orange; font-size: 16px">栏目二</span><br/>
+<span style="color: blue; font-size: 16px; font-style: italic">栏目三</span><br/>
+<span style="color: green; font-size: 16px; font-weight: bold">栏目四</span><br/>
+
+<span style="color: navy; font-size: 16px">栏目五</span>
 
 ```html
 <!DOCTYPE html>
