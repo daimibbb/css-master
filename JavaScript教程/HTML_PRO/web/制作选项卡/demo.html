@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+<div class="wrapper">
+    <ul>
+        <li class="active"><a href="#">首页</a></li>
+        <li><a href="#">新闻</a></li>
+        <li><a href="#">热卖</a></li>
+    </ul>
+    <p id="home" class="active">首页内容</p>
+    <p id="news">新闻内容</p>
+    <p id="hotPurchase">热卖内容></p>
+</div>
+</body>
+<script>
+    var lis = document.getElementsByTagName('li');
+    var ps = document.getElementsByTagName('p');
+    for(var i=0; i<lis.length; i++){
+        lis[i].index = i;   //这个用来记录每个标签的遍历位置，不用this，这里this指代的应该是window
+        lis[i].onclick = function () {
+            /*思路
+            * 1.清除所有标签上的active
+            * 2.将单击的li和p标签都添加active属性
+            * */
+            //this这里值的是点击的li标签
+            for (var j=0; j<lis.length; j++) {
+                lis[j].className = '';
+                ps[j].className = '';
+            }
+            //注意：这有个坑，不能跳！！！不能用遍历的i，要用this下的属性index
+            this.className = 'active';
+            ps[this.index].className = 'active';
+        }
+    }
+</script>
+</html>

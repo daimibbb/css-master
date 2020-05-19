@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小米滚动</title>
+    <style type="text/css">
+        #box{
+            position: relative;
+            margin: 50px auto;
+            width: 890px;
+            height: 400px;
+            overflow: hidden;
+        }
+        img{
+            position: absolute;
+        }
+        span{
+            position: absolute;
+            display: block;
+            width: 890px;
+            height: 200px;
+            background-color: transparent;
+        }
+        #upSpan{
+            top:0;
+        }
+        #downSpan{
+            bottom:0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="ad-one.jpg" alt="" id="img1">
+        <span id="upSpan"></span>
+        <span id="downSpan"></span>
+    </div>
+</body>
+<script type="text/javascript">
+    var downSpan = document.getElementById('downSpan');
+    var upSpan = document.getElementById('upSpan');
+    var img = document.getElementById('img1');
+    var count = 0;
+    var time = null;  //注意time要声明变量
+    //这个upSpan标签在图片上，让图片向上滚动，top越来越小
+    upSpan.onmouseover = function(){
+            clearInterval(time);
+            time = setInterval(
+             function(){
+                 count -= 3;//  1334-400  top比最低端的-934px大，就可以继续减小，直到底部
+                 count >= -934 ? img.style.top = count + 'px':clearInterval(time);
+             }
+            ,30)
+    };
+    //这个downSpan标签在图片下面，让图片向下滚动，top越来越大
+    downSpan.onmouseover = function(){
+        clearInterval(time);    //注意，这里必须要清空定时器，否则两个定时器一起运行会引起冲突
+        time = setInterval(
+         function(){
+             count += 3;
+             //向下滚，top数值越来越大，直到最顶端0
+             count < 0 ? img.style.top = count + 'px':clearInterval(time);
+         }
+        ,30)
+    };
+
+</script>
+</html>

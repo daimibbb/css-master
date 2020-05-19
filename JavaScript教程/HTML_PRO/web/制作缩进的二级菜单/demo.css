@@ -1,0 +1,72 @@
+/* 一级菜单风格设置 */
+body {
+    background: #eed0e0;
+}
+#navigation {
+    width: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#navigation > ul > li {
+    border-bottom: 1px solid #ad9f9f;
+}
+#navigation > ul > li > a {
+    display: block;
+    padding: 5px 5px 5px 0.5em;
+    /* 链接去除下划线 */
+    text-decoration: none;
+    border-left: 12px solid #711111;
+}
+#navigation > ul > li > a:link,
+#navigation > ul > li > a:visited {
+    background: #c11136;
+    color: #fff;
+}
+#navigation > ul > li > a:hover {
+    background: #880020;
+    color: #f00;
+}
+h1 {
+    color: red;
+    background: #49ff01;
+    text-align: center;
+    padding: 20px;
+}
+img {
+    float: left;
+    border: 2px #f00 solid;
+    margin: 5px;
+}
+/* 二级子菜单风格设置*/
+/* 包含选择器 */
+#navigation ul li ul {
+    margin: 0;
+    padding: 0;
+}
+#navigation ul li ul li {
+    border-top: 1px solid #ed9f9f;
+}
+#navigation ul li ul li a {
+    display: block;
+    padding: 3px 3px 3px 0.5em;
+    text-decoration: none;
+    border-left: 28px solid #a71f1f;
+    border-right: 1px solid #711515;
+}
+#navigation ul li ul li a:link,
+#navigation ul li ul li a:visited {
+    background: #e85070;
+    color: #fff;
+}
+#navigation ul li ul li a:hover {
+    background: #c2425d;
+    color: #ff0;
+}
+#navigation ul li ul.myHide {
+    display: none;
+}
+#navigation ul li.myShow {
+    display: block;
+}
+ul {
+    list-style-type: none;
+}

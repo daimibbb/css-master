@@ -24,7 +24,7 @@ function myFunction() {
     if (time<20) {
         x = "Good day";
     }
-    document.getElementById("demo").innerHTML=x;
+    document.getElementById("demo").innerHTML = x;
 }
 </script>
 ```
@@ -44,7 +44,7 @@ function myFunction() {
     } else {
         x = "Good evening";
     }
-    document.getElementById("demo").innerHTML=x;
+    document.getElementById("demo").innerHTML = x;
 }
 </script>
 ```
@@ -64,18 +64,6 @@ if (time<10) {
 </script>
 <p>这个例子演示了 if..else if...else 语句。</p>
 ```
-
-<script>
-var time = new Date().getHours();
-if (time<10) {
-    document.write("<b>早上好</b>")
-} else if(time>=10 && time<16) {
-    document.write("<b>今天好</b>");
-} else {
-    document.write("<b>晚上好!</b>");
-}
-</script>
-<p>这个例子演示了 if..else if...else 语句。</p>
 
 这个实例演示了一个链接，当您点击链接时，会带您到不同的地方去。每种机会都是 50% 的概率。
 
@@ -126,8 +114,7 @@ obj[condition]()
 # JavaScript switch 语句
 
 ```javascript
-switch(n)
-{
+switch(n) {
     case 1:
         执行代码块 1
         break;
@@ -142,7 +129,7 @@ switch(n)
 工作原理：首先设置表达式 *n*（通常是一个变量）。随后表达式的值会与结构中的每个 case 的值做比较。如果存在匹配，则与该 case 关联的代码块会被执行。请使用 **break** 来阻止代码自动地向下一个 case 运行。
 
 ```javascript
-var d=new Date().getDay(); 
+var d = new Date().getDay(); 
 switch (d) { 
   case 0: x="今天是星期日"; break; 
   case 1: x="今天是星期一"; break; 
@@ -219,17 +206,17 @@ JavaScript 支持不同类型的循环：
 
 ```javascript
 function myFunction(){
-	var x = "";
-	for (var i=0;i<5;i++){
-		x = x + "该数字为 " + i + "<br>";
-	}
-	document.getElementById("demo").innerHTML=x;
+    var x = "";
+    for (var i=0;i<5;i++){
+        x = x + "该数字为 " + i + "<br>";
+    }
+    document.getElementById("demo").innerHTML=x;
 }
 ```
 
 ## 语句 1
 
-通常我们会使用语句 1 初始化循环中所用的变量 (var i=0)。
+通常我们会使用语句 1 初始化循环中所用的变量 (`var i=0`)。
 
 语句 1 是可选的，也就是说不使用语句 1 也可以。
 
@@ -266,7 +253,7 @@ for (; i<len; i++) {
 
 语句 3 也是可选的。
 
-语句 3 有多种用法。增量可以是负数 (i--)，或者更大 (i=i+15)。
+语句 3 有多种用法。增量可以是负数 `(i--`)，或者更大 (`i=i+15`)。
 
 语句 3 也可以省略（比如当循环内部有相应的代码时）：
 
@@ -300,7 +287,7 @@ function myFunction() {
 **for 数组循环**
 
 ```javascript
-var size=[1,2,3,4,5,6,7];
+var size=[1, 2, 3, 4, 5, 6, 7];
 for (var i=0; i<size.length; i++) {
     document.write(size[i] + " ")
 }
@@ -336,16 +323,16 @@ function myFunction() {
 
 ## do/while 循环
 
-do/while 循环是 while 循环的变体。该循环会在检查条件是否为真之前执行一次代码块，然后如果条件为真的话，就会重复这个循环。
+`do/while` 循环是 `while` 循环的变体。该循环会在检查条件是否为真之前执行一次代码块，然后如果条件为真的话，就会重复这个循环。
 
 ```javascript
 function myFunction(){
-	var x="",i=0;
-	do {
-		x=x + "该数字为 " + i + "<br>";
-	    i++;
-	} while (i<5)  
-	document.getElementById("demo").innerHTML=x;
+    var x="",i=0;
+    do {
+        x=x + "该数字为 " + i + "<br>";
+        i++;
+    } while (i<5)  
+    document.getElementById("demo").innerHTML=x;
 }
 ```
 
@@ -377,14 +364,14 @@ while (cars[i]) {
 
 ```javascript
 function myFunction(){
-	var x="", i=0;
-	for (i=0; i<10; i++) {
-		if (i==3){
-    			break;
-			}
-    	x=x + "该数字为 " + i + "<br>";
+    var x="";
+    for (var i=0; i<10; i++) {
+        if (i==3){
+                break;
+            }
+        x=x + "该数字为 " + i + "<br>";
     }
-	document.getElementById("demo").innerHTML=x;
+    document.getElementById("demo").innerHTML=x;
 }
 ```
 
@@ -392,14 +379,14 @@ function myFunction(){
 
 ```javascript
 function myFunction(){
-	var x="",i=0;
-	for (i=0; i<10; i++){
-  		if (i==3) {
-    		continue;
-    	}
-		x=x + "该数字为 " + i + "<br>";
-  	}
-	document.getElementById("demo").innerHTML=x;
+    var x="";
+    for (var i=0; i<10; i++){
+          if (i==3) {
+            continue;
+        }
+        x=x + "该数字为 " + i + "<br>";
+      }
+    document.getElementById("demo").innerHTML=x;
 }
 ```
 
@@ -420,7 +407,7 @@ statements
 
 ```javascript
 break labelname; 
- 
+
 continue labelname;
 ```
 
@@ -443,7 +430,7 @@ list: {
 }
 ```
 
-```
+```out
 BMW
 Volvo
 Saab
@@ -486,8 +473,7 @@ list:
 上述`break list;`会跳出`list`的代码块。如果将`break`换成`continue`会有惊喜，违反了明确中的第二点，因为`list`只是个普通代码块，而不是循环。除非`list`写成如下形式 `list`:
 
 ```javascript
-for(var i=0; i<10; ++i)
-{
+for(var i=0; i<10; ++i) {
     continue list;
 }
 ```
@@ -576,14 +562,6 @@ document.getElementById("demo").innerHTML = typeof person;
 </script>
 ```
 
-<p>对象可以设置为 <b>undefined</b> 来清空。</p>
-<p id="demo"></p>
-<script>
-var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
-var person = undefined;
-document.getElementById("demo").innerHTML = typeof person;
-</script>
-
 ## undefined
 
 在 JavaScript 中, **undefined** 是一个没有设置值的变量。
@@ -600,7 +578,7 @@ person = undefined;          // 值为 undefined, 类型是undefined
 <script>
 var person;
 document.getElementById("demo").innerHTML =
-	person + "<br>" + typeof person;
+    person + "<br>" + typeof person;
 </script>
 ```
 
@@ -626,8 +604,8 @@ null == undefined            // true
 
 **1、定义**
 
--  （1）`undefined`：是所有没有赋值变量的默认值，自动赋值。
--  （2）`null`：主动释放一个变量引用的对象，表示一个变量不再指向任何对象地址。
+- （1）`undefined`：是所有没有赋值变量的默认值，自动赋值。
+- （2）`null`：主动释放一个变量引用的对象，表示一个变量不再指向任何对象地址。
 
 **2、何时使用null?**
 
@@ -660,14 +638,14 @@ emps = null;     // 释放指向数组的引用
 
 它是专门释放对象内存的一个程序。
 
--  （1）在底层，后台伴随当前程序同时运行；引擎会定时自动调用垃圾回收期；
--  （2）总有一个对象不再被任何变量引用时，才释放。
+- （1）在底层，后台伴随当前程序同时运行；引擎会定时自动调用垃圾回收期；
+- （2）总有一个对象不再被任何变量引用时，才释放。
 
 ---
 
 # JavaScript 类型转换
 
-`Number() `转换为数字， `String()` 转换为字符串，` Boolean() `转化为布尔值。
+`Number()`转换为数字， `String()` 转换为字符串，` Boolean()`转化为布尔值。
 
 ## JavaScript 数据类型
 
@@ -716,7 +694,7 @@ typeof null                   // 返回 object
 - `null `的数据类型是 `object`
 - 未定义变量的数据类型为 `undefined`
 
-如果对象是 JavaScript Array 或 JavaScript Date ，我们就无法通过 **typeof** 来判断他们的类型，因为都是 返回 object。
+如果对象是 JavaScript `Array `或 JavaScript `Date `，我们就无法通过 **typeof** 来判断他们的类型，因为都是返回`object`。
 
 ## constructor 属性
 
@@ -769,11 +747,17 @@ x.toString()
 (100 + 23).toString()
 ```
 
-| 方法              | 描述                                                 |
-| :---------------- | :--------------------------------------------------- |
-| `toExponential()` | 把对象的值转换为指数计数法。                         |
+| 方法                | 描述                         |
+|:----------------- |:-------------------------- |
+| `toExponential()` | 把对象的值转换为指数计数法。             |
 | `toFixed()`       | 把数字转换为字符串，结果的小数点后有指定位数的数字。 |
-| `toPrecision()`   | 把数字格式化为指定的长度。                           |
+| `toPrecision()`   | 把数字格式化为指定的长度。              |
+
+```javascript
+(123).toExponential(); // 返回 "1.23e+2"
+(123).toFixed(3);      // 返回 "123.000"
+(123).toPrecision(5);  // 返回 "123.00"
+```
 
 ## 将布尔值转换为字符串
 
@@ -793,13 +777,13 @@ true.toString()      // 返回 "true"
 
 ## 将日期转换为字符串
 
-Date() 返回字符串。
+**Date()** 返回字符串。
 
 ```javascript
 Date()  // "Sat Apr 11 2020 10:49:46 GMT+0800 (中国标准时间)"
 ```
 
-全局方法 String() 可以将日期对象转换为字符串。
+全局方法**String()** 可以将日期对象转换为字符串。
 
 ```javascript
 String(Date()) 
@@ -812,17 +796,17 @@ obj = new Date();
 obj.toString();
 ```
 
-| 方法                | 描述                                        |
-| :------------------ | :------------------------------------------ |
+| 方法                  | 描述                            |
+|:------------------- |:----------------------------- |
 | `getDate()`         | 从 Date 对象返回一个月中的某一天 (1 ~ 31)。 |
-| `getDay()`          | 从 Date 对象返回一周中的某一天 (0 ~ 6)。    |
-| `getFullYear()`     | 从 Date 对象以四位数字返回年份。            |
-| `getHours()`        | 返回 Date 对象的小时 (0 ~ 23)。             |
-| `getMilliseconds()` | 返回 Date 对象的毫秒(0 ~ 999)。             |
-| `getMinutes()`      | 返回 Date 对象的分钟 (0 ~ 59)。             |
-| `getMonth()`        | 从 Date 对象返回月份 (0 ~ 11)。             |
-| `getSeconds()`      | 返回 Date 对象的秒数 (0 ~ 59)。             |
-| `getTime()`         | 返回 1970 年 1 月 1 日至今的毫秒数。        |
+| `getDay()`          | 从 Date 对象返回一周中的某一天 (0 ~ 6)。   |
+| `getFullYear()`     | 从 Date 对象以四位数字返回年份。           |
+| `getHours()`        | 返回 Date 对象的小时 (0 ~ 23)。       |
+| `getMilliseconds()` | 返回 Date 对象的毫秒(0 ~ 999)。       |
+| `getMinutes()`      | 返回 Date 对象的分钟 (0 ~ 59)。       |
+| `getMonth()`        | 从 Date 对象返回月份 (0 ~ 11)。       |
+| `getSeconds()`      | 返回 Date 对象的秒数 (0 ~ 59)。       |
+| `getTime()`         | 返回 1970 年 1 月 1 日至今的毫秒数。      |
 
 ## 将字符串转换为数字
 
@@ -841,10 +825,15 @@ Number("")        // 返回 0
 Number("99 88")   // 返回 NaN
 ```
 
-| 方法           | 描述                               |
-| :------------- | :--------------------------------- |
+| 方法             | 描述                |
+|:-------------- |:----------------- |
 | `parseFloat()` | 解析一个字符串，并返回一个浮点数。 |
-| `parseInt()`   | 解析一个字符串，并返回一个整数。   |
+| `parseInt()`   | 解析一个字符串，并返回一个整数。  |
+
+```javascript
+parseInt("123") //返回 123
+parseFloat("123") //返回 123
+```
 
 ## 一元运算符 +
 
@@ -1120,36 +1109,36 @@ var txt = str.replace("Microsoft","Runoob");
 
 **修饰符** 可以在全局搜索中不区分大小写:
 
-| 修饰符 | 描述                                                     |
-| :----- | :------------------------------------------------------- |
-| `i`    | 执行对大小写不敏感的匹配。                               |
-| `g`    | 执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。 |
-| `m`    | 执行多行匹配。                                           |
+| 修饰符 | 描述                           |
+|:--- |:---------------------------- |
+| `i` | 执行对大小写不敏感的匹配。                |
+| `g` | 执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。 |
+| `m` | 执行多行匹配。                      |
 
 ## 正则表达式模式
 
 方括号用于查找某个范围内的字符：
 
-| 表达式  | 描述                       |
-| :------ | :------------------------- |
-| `[abc]` | 查找方括号之间的任何字符。 |
+| 表达式     | 描述               |
+|:------- |:---------------- |
+| `[abc]` | 查找方括号之间的任何字符。    |
 | `[0-9]` | 查找任何从 0 至 9 的数字。 |
-| `(x|y)` | 查找任何以 \| 分隔的选项。 |
+| `(x     | y)`              |
 
 元字符是拥有特殊含义的字符：
 
-| 元字符   | 描述                                        |
-| :------- | :------------------------------------------ |
-| `\d`     | 查找数字。                                  |
-| `\s`     | 查找空白字符。                              |
-| `\b`     | 匹配单词边界。                              |
+| 元字符      | 描述                            |
+|:-------- |:----------------------------- |
+| `\d`     | 查找数字。                         |
+| `\s`     | 查找空白字符。                       |
+| `\b`     | 匹配单词边界。                       |
 | `\uxxxx` | 查找以十六进制数 xxxx 规定的 Unicode 字符。 |
 
 量词:
 
-| 量词 | 描述                                  |
-| :--- | :------------------------------------ |
-| `n+` | 匹配任何包含至少一个 *n* 的字符串。   |
+| 量词   | 描述                    |
+|:---- |:--------------------- |
+| `n+` | 匹配任何包含至少一个 *n* 的字符串。  |
 | `n*` | 匹配任何包含零个或多个 *n* 的字符串。 |
 | `n?` | 匹配任何包含零个或一个 *n* 的字符串。 |
 
@@ -2285,24 +2274,24 @@ HTML 约束验证基于：
 
 ### 约束验证 HTML 输入属性
 
-| 属性       | 描述                     |
-| :--------- | :----------------------- |
-| `disabled` | 规定输入的元素不可用     |
-| `max`      | 规定输入元素的最大值     |
-| `min`      | 规定输入元素的最小值     |
-| `pattern`  | 规定输入元素值的模式     |
+| 属性         | 描述           |
+|:---------- |:------------ |
+| `disabled` | 规定输入的元素不可用   |
+| `max`      | 规定输入元素的最大值   |
+| `min`      | 规定输入元素的最小值   |
+| `pattern`  | 规定输入元素值的模式   |
 | `required` | 规定输入元素字段是必需的 |
-| `type `    | 规定输入元素的类型       |
+| `type `    | 规定输入元素的类型    |
 
 ### 约束验证 CSS 伪类选择器
 
-| 选择器      | 描述                                    |
-| :---------- | :-------------------------------------- |
+| 选择器         | 描述                            |
+|:----------- |:----------------------------- |
 | `:disabled` | 选取属性为 "disabled" 属性的 input 元素 |
-| `:invalid`  | 选取无效的 input 元素                   |
-| `:optional` | 选择没有"required"属性的 input 元素     |
-| `:required` | 选择有"required"属性的 input 元素       |
-| `:valid`    | 选取有效值的 input 元素                 |
+| `:invalid`  | 选取无效的 input 元素                |
+| `:optional` | 选择没有"required"属性的 input 元素    |
+| `:required` | 选择有"required"属性的 input 元素     |
+| `:valid`    | 选取有效值的 input 元素               |
 
 ---
 
@@ -2375,9 +2364,9 @@ function validateForm() {
 
 ## 约束验证 DOM 方法
 
-| Property              | Description                                                  |
-| :-------------------- | :----------------------------------------------------------- |
-| `checkValidity()`     | 如果 `input `元素中的数据是合法的返回 `true`，否则返回 false。 |
+| Property              | Description                                                                                                                                                             |
+|:--------------------- |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `checkValidity()`     | 如果 `input `元素中的数据是合法的返回 `true`，否则返回 false。                                                                                                                              |
 | `setCustomValidity()` | 设置 `input `元素的 *validationMessage* 属性，用于自定义错误提示信息的方法。使用 *setCustomValidity* 设置了自定义提示后，`validity.customError` 就会变成true，则 checkValidity 总是会返回false。如果要重新判断需要取消自定义提示，方式如下： |
 
 ```javascript
@@ -2410,11 +2399,11 @@ function myFunction() {
 
 ## 约束验证 DOM 属性
 
-| 属性                | 描述                                    |
-| :------------------ | :-------------------------------------- |
+| 属性                  | 描述                       |
+|:------------------- |:------------------------ |
 | `validity`          | 布尔属性值，返回 *input* 输入值是否合法 |
-| `validationMessage` | 浏览器错误提示信息                      |
-| `willValidate`      | 指定 *input* 是否需要验证               |
+| `validationMessage` | 浏览器错误提示信息                |
+| `willValidate`      | 指定 *input* 是否需要验证        |
 
 ------
 
@@ -2422,17 +2411,17 @@ function myFunction() {
 
 *input* 元素的 **validity 属性**包含一系列关于 `validity `数据属性:
 
-| 属性              | 描述                                                         |
-| :---------------- | :----------------------------------------------------------- |
-| customError       | 设置为 true, 如果设置了自定义的 validity 信息。              |
-| `patternMismatch` | 设置为 true, 如果元素的值不匹配它的模式属性。                |
-| `rangeOverflow`   | 设置为 true, 如果元素的值大于设置的最大值。                  |
-| `rangeUnderflow`  | 设置为 true, 如果元素的值小于它的最小值。                    |
-| `stepMismatch`    | 设置为 true, 如果元素的值不是按照规定的 *step* 属性设置。    |
+| 属性                | 描述                                       |
+|:----------------- |:---------------------------------------- |
+| customError       | 设置为 true, 如果设置了自定义的 validity 信息。         |
+| `patternMismatch` | 设置为 true, 如果元素的值不匹配它的模式属性。               |
+| `rangeOverflow`   | 设置为 true, 如果元素的值大于设置的最大值。                |
+| `rangeUnderflow`  | 设置为 true, 如果元素的值小于它的最小值。                 |
+| `stepMismatch`    | 设置为 true, 如果元素的值不是按照规定的 *step* 属性设置。     |
 | `tooLong`         | 设置为 true, 如果元素的值超过了 *maxLength* 属性设置的长度。 |
 | `typeMismatch`    | 设置为 true, 如果元素的值不是预期相匹配的类型。              |
-| `valueMissing`    | 设置为 true，如果元素 (*required* 属性) 没有值。             |
-| `valid`           | 设置为 true，如果元素的值是合法的。                          |
+| `valueMissing`    | 设置为 true，如果元素 (*required* 属性) 没有值。       |
+| `valid`           | 设置为 true，如果元素的值是合法的。                     |
 
 如果输入的值大于 100，显示一个信息：
 
@@ -2465,10 +2454,10 @@ function myFunction() {
 <script>
 function myFunction() {
     var txt = "";
-	var inpObj = document.getElementById("id1");
-	if(isNumeric(inpObj.value)) {
-		txt = "你输入的不是数字";
-	} else if (inpObj.validity.rangeUnderflow) {
+    var inpObj = document.getElementById("id1");
+    if(isNumeric(inpObj.value)) {
+        txt = "你输入的不是数字";
+    } else if (inpObj.validity.rangeUnderflow) {
         txt = "输入的值太小了";
     } else {
         txt = "输入正确";
@@ -2489,8 +2478,8 @@ function isNumeric(n) {
 ```html
 <p>输入数字并点击验证按钮:</p>
 <label>
-	<input id="id1" type="number" min="100" max="300" required>
-	<button onclick="myFunction()">验证</button>
+    <input id="id1" type="number" min="100" max="300" required>
+    <button onclick="myFunction()">验证</button>
 </label>
 <p>如果输入的数字小于 100 或大于300，会提示错误信息。</p>
 <p id="demo"></p>
@@ -2840,3 +2829,959 @@ JavaScript 可以在 HTML 外部使用。它可在许多其他应用程序中作
 一个实例是 **const** 关键字，用于定义变量。 一些 JavaScript 引擎把 const 当作 var 的同义词。另一些引擎则把 const 当作只读变量的定义。
 
 Const 是 JavaScript 的扩展。JavaScript 引擎支持它用在 Firefox 和 Chrome 中。但是它并不是 JavaScript 标准 ES3 或 ES5 的组成部分。**建议：不要使用它**。
+
+---
+
+# JavaScript this 关键字
+
+面向对象语言中 `this `表示当前对象的一个引用。
+
+但在 JavaScript 中 `this `不是固定不变的，它会随着执行环境的改变而改变。
+
+- 在方法中，`this `表示该方法所属的对象。
+- 如果单独使用，`this `表示全局对象。
+- 在函数中，`this `表示全局对象。
+- 在函数中，在严格模式下，`this `是未定义的(`undefined`)。
+- 在事件中，`this `表示接收事件的元素。
+- 类似 `call()` 和 `apply() `方法可以将 `this `引用到任何对象。
+
+```javascript
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+```
+
+## 方法中的 this
+
+在对象方法中， `this `指向调用它所在方法的对象。
+
+在上面一个实例中，`this `表示 `person `对象。
+
+*fullName*方法所属的对象就是 *person*。因为 *person* 对象是 *fullName* 方法的所有者。
+
+## 单独使用 this
+
+单独使用 this，则它指向全局(Global)对象。
+
+在浏览器中，window 就是该全局对象为 [**object Window**]:
+
+```javascript
+var x = this;
+// [object Window]
+```
+
+严格模式下，如果单独使用，this 也是指向全局(Global)对象。
+
+```javascript
+"use strict";
+var x = this;
+```
+
+## 函数中使用 this（默认）
+
+在函数中，函数的所属者默认绑定到 `this` 上。
+
+在浏览器中，`window `就是该全局对象为 [**object Window**]:
+
+```javascript
+function myFunction() {
+  return this;
+}
+```
+
+## 函数中使用 this（严格模式）
+
+严格模式下函数是没有绑定到 `this `上，这时候 `this `是 **undefined**。
+
+```javascript
+"use strict";
+function myFunction() {
+  return this;
+}
+```
+
+## 事件中的 this
+
+在 HTML 事件句柄中，`this `指向了接收事件的 HTML 元素：
+
+```html
+<button onclick="this.style.display='none'">
+    点我后我就消失了
+</button>
+```
+
+## 对象方法中绑定
+
+下面实例中，`this `是 *person* 对象，*person* 对象是函数的所有者：
+
+```javascript
+var person = {
+  firstName  : "John",
+  lastName   : "Doe",
+  id         : 5566,
+  myFunction : function() {
+    return this;
+  }
+};
+// [object Object]
+```
+
+```javascript
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+```
+
+说明: **this.firstName** 表示 **this** (person) 对象的 **firstName** 属性。
+
+## 显式函数绑定
+
+在 JavaScript 中函数也是对象，对象则有方法，`apply `和 `call `就是函数对象的方法。这两个方法异常强大，他们允许切换函数执行的上下文环境（context），即 `this `绑定的对象。
+
+在下面实例中，当我们使用 *person2* 作为参数来调用 *person1.fullName* 方法时, **this** 将指向 *person2*, 即便它是 *person1* 的方法：
+
+```javascript
+var person1 = {
+  fullName: function() {
+      return this.firstName + " " + this.lastName;
+  }
+};
+var person2 = {
+  firstName:"John",
+  lastName: "Doe",
+};
+person1.fullName.call(person2);  // 返回 "John Doe"
+```
+
+---
+
+**this 的多种指向:**
+
+- 1、在对象方法中， this 指向调用它所在方法的对象。
+- 2、单独使用 this，它指向全局(Global)对象。
+- 3、函数使用中，this 指向函数的所属者。
+- 4、严格模式下函数是没有绑定到 this 上，这时候 this 是 undefined。
+- 5、在 HTML 事件句柄中，this 指向了接收事件的 HTML 元素。
+- 6、apply 和 call 允许切换函数执行的上下文环境（context），即 this 绑定的对象，可以将 this 引用到任何对象。
+
+---
+
+# JavaScript let 和 const
+
+### ECMAScript 2015(ECMAScript 6)
+
+ES2015(ES6) 新增加了两个重要的 JavaScript 关键字: **let** 和 **const**。
+
+let 声明的变量只在 let 命令所在的代码块内有效。
+
+const 声明一个只读的常量，一旦声明，常量的值就不能改变。
+
+在 ES6 之前，JavaScript 只有两种作用域： **全局变量** 与 **函数内的局部变量**。
+
+## 全局变量
+
+在函数外声明的变量作用域是全局的：
+
+```javascript
+var carName = "Volvo";
+
+// 这里可以使用 carName 变量
+
+function myFunction() {
+    // 这里也可以使用 carName 变量
+}
+```
+
+```html
+<p>全局变量在任何脚本和函数内均可访问。</p>
+<p id="demo"></p>
+<script>
+var carName = "Volvo";
+myFunction();
+function myFunction() {
+    document.getElementById("demo").innerHTML =
+        "我可以显示 " + carName;
+}
+</script>
+```
+
+## 局部变量
+
+在函数内声明的变量作用域是局部的（函数内）：
+
+```javascript
+// 这里不能使用 carName 变量
+
+function myFunction() {
+    var carName = "Volvo";
+    // 这里可以使用 carName 变量
+}
+
+// 这里不能使用 carName 变量
+```
+
+## JavaScript 块级作用域(Block Scope)
+
+使用 `var `关键字声明的变量不具备块级作用域的特性，它在 {} 外依然能被访问到。
+
+```javascript
+{ 
+    var x = 2; 
+}
+// 这里可以使用 x 变量
+```
+
+在 ES6 之前，是没有块级作用域的概念的。
+
+ES6 可以使用 `let `关键字来实现块级作用域。
+
+let 声明的变量只在 let 命令所在的代码块 **{}** 内有效，在 **{}** 之外不能访问。
+
+```javascript
+{ 
+    let x = 2;
+}
+// 这里不能使用 x 变量
+```
+
+## 重新定义变量
+
+使用 `var `关键字重新声明变量可能会带来问题。
+
+在块中重新声明变量也会重新声明块外的变量：
+
+```javascript
+var x = 10;
+// 这里输出 x 为 10
+{ 
+    var x = 2;
+    // 这里输出 x 为 2
+}
+// 这里输出 x 为 2
+```
+
+`let` 关键字就可以解决这个问题，因为它只在 let 命令所在的代码块 **{}** 内有效。
+
+```javascript
+var x = 10;
+// 这里输出 x 为 10
+{ 
+    let x = 2;
+    // 这里输出 x 为 2
+}
+// 这里输出 x 为 10
+```
+
+## 循环作用域
+
+使用 `var `关键字：
+
+```javascript
+var i = 5;
+for (var i = 0; i < 10; i++) {
+    // 一些代码...
+}
+// 这里输出 i 为 10
+```
+
+使用 `let `关键字：
+
+```javascript
+let i = 5;
+for (let i = 0; i < 10; i++) {
+    // 一些代码...
+}
+// 这里输出 i 为 5
+```
+
+在第一个实例中，使用了 **var** 关键字，它声明的变量是全局的，包括循环体内与循环体外。
+
+在第二个实例中，使用 **let** 关键字， 它声明的变量作用域只在循环体内，循环体外的变量不受影响。
+
+## 局部变量
+
+在函数体内使用 **var** 和 **let** 关键字声明的变量有点类似。
+
+它们的作用域都是 **局部的**:
+
+```javascript
+// 使用 var
+function myFunction() {
+    var carName = "Volvo";   // 局部作用域
+}
+
+// 使用 let
+function myFunction() {
+    let carName = "Volvo";   //  局部作用域
+}
+```
+
+## 全局变量
+
+在函数体外或代码块外使用 **var** 和 **let** 关键字声明的变量也有点类似。
+
+它们的作用域都是 **全局的**:
+
+```javascript
+// 使用 var
+var x = 2;       // 全局作用域
+
+// 使用 let
+let x = 2;       // 全局作用域
+```
+
+## HTML 代码中使用全局变量
+
+在 JavaScript 中, 全局作用域是针对 JavaScript 环境。
+
+在 HTML 中, 全局作用域是针对 *window* 对象。
+
+使用 **var** 关键字声明的全局作用域变量属于 *window* 对象:
+
+```javascript
+var carName = "Volvo";
+// 可以使用 window.carName 访问变量
+```
+
+使用 **let** 关键字声明的全局作用域变量不属于 *window* 对象:
+
+```javascript
+let carName = "Volvo";
+// 不能使用 window.carName 访问变量
+```
+
+### 重置变量
+
+使用 **var** 关键字声明的变量在任何地方都可以修改：
+
+```javascript
+var x = 2;
+ // x 为 2
+
+var x = 3;
+ // 现在 x 为 3
+```
+
+在相同的作用域或块级作用域中，不能使用 **let** 关键字来重置 **var** 关键字声明的变量:
+
+```javascript
+var x = 2;       // 合法
+let x = 3;       // 不合法
+
+{
+    var x = 4;   // 合法
+    let x = 5   // 不合法
+}
+```
+
+在相同的作用域或块级作用域中，不能使用 **let** 关键字来重置 **let** 关键字声明的变量:
+
+```javascript
+let x = 2;       // 合法
+let x = 3;       // 不合法
+
+{
+    let x = 4;   // 合法
+    let x = 5;   // 不合法
+}
+```
+
+在相同的作用域或块级作用域中，不能使用 **var** 关键字来重置 **let** 关键字声明的变量:
+
+```javascript
+let x = 2;       // 合法
+var x = 3;       // 不合法
+
+{
+    let x = 4;   // 合法
+    var x = 5;   // 不合法
+}
+```
+
+**let** 关键字在不同作用域，或不同块级作用域中是可以重新声明赋值的:
+
+```javascript
+let x = 2;       // 合法
+
+{
+    let x = 3;   // 合法
+}
+
+{
+    let x = 4;   // 合法
+}
+```
+
+## 变量提升
+
+JavaScript 中，`var `关键字定义的变量可以在使用后声明，也就是变量可以先使用再声明
+
+```javascript
+// 在这里可以使用 carName 变量
+
+var carName;
+```
+
+`let `关键字定义的变量则不可以在使用后声明，也就是变量需要先声明再使用。
+
+```javascript
+// 在这里不可以使用 carName 变量
+
+let carName;
+```
+
+## const 关键字
+
+`const `用于声明一个或多个常量，声明时必须进行初始化，且初始化后值不可再修改：
+
+```javascript
+const PI = 3.141592653589793;
+PI = 3.14;      // 报错
+PI = PI + 10;   // 报错
+```
+
+`const`定义常量与使用`let` 定义的变量相似：
+
+- 二者都是块级作用域
+- 都不能和它所在作用域内的其他变量或函数拥有相同的名称
+
+两者还有以下两点区别：
+
+- `const`声明的常量必须初始化，而`let`声明的变量不用
+- const 定义常量的值不能通过再赋值修改，也不能再次声明。而 let 定义的变量值可以修改。
+
+```javascript
+var x = 10;
+// 这里输出 x 为 10
+{ 
+    const x = 2;
+    // 这里输出 x 为 2
+}
+// 这里输出 x 为 10
+```
+
+`const `声明的常量必须初始化：
+
+```javascript
+// 错误写法
+const PI;
+PI = 3.14159265359;
+
+// 正确写法
+const PI = 3.14159265359;
+```
+
+---
+
+## 并非真正的常量
+
+`const `的本质:  `const `定义的变量并非常量，并非不可变，它定义了一个常量引用一个值。使用 `const `定义的对象或者数组，其实是可变的。下面的代码并不会报错：
+
+```javascript
+// 创建常量对象
+const car = {type:"Fiat", model:"500", color:"white"};
+
+// 修改属性:
+car.color = "red";
+
+// 添加属性
+car.owner = "Johnson";
+```
+
+但是我们不能对常量对象重新赋值：
+
+```javascript
+const car = {type:"Fiat", model:"500", color:"white"};
+car = {type:"Volvo", model:"EX60", color:"red"};    // 错误
+```
+
+以下实例修改常量数组：
+
+```javascript
+// 创建常量数组
+const cars = ["Saab", "Volvo", "BMW"];
+
+// 修改元素
+cars[0] = "Toyota";
+
+// 添加元素
+cars.push("Audi");
+```
+
+但是我们不能对常量数组重新赋值：
+
+```javascript
+const cars = ["Saab", "Volvo", "BMW"];
+cars = ["Toyota", "Volvo", "Audi"];    // 错误
+```
+
+### 重置变量
+
+使用 **var** 关键字声明的变量在任何地方都可以修改：
+
+```javascript
+var x = 2;    //  合法
+var x = 3;    //  合法
+x = 4;        //  合法
+```
+
+在相同的作用域或块级作用域中，不能使用 **const** 关键字来重置 **var** 和 **let**关键字声明的变量:
+
+```javascript
+var x = 2;         // 合法
+const x = 2;       // 不合法
+{
+    let x = 2;     // 合法
+    const x = 2;   // 不合法
+}
+```
+
+在相同的作用域或块级作用域中，不能使用 **const** 关键字来重置 **const** 关键字声明的变量:
+
+```javascript
+const x = 2;       // 合法
+const x = 3;       // 不合法
+x = 3;             // 不合法
+var x = 3;         // 不合法
+let x = 3;         // 不合法
+
+{
+    const x = 2;   // 合法
+    const x = 3;   // 不合法
+    x = 3;         // 不合法
+    var x = 3;     // 不合法
+    let x = 3;     // 不合法
+}
+```
+
+**const** 关键字在不同作用域，或不同块级作用域中是可以重新声明赋值的:
+
+```javascript
+const x = 2;       // 合法
+
+{
+    const x = 3;   // 合法
+}
+
+{
+    const x = 4;   // 合法
+}
+```
+
+### 变量提升
+
+JavaScript `var `关键字定义的变量可以在使用后声明，也就是变量可以先使用再声明。
+
+```javascript
+carName = "Volvo";    // 这里可以使用 carName 变量
+var carName;
+```
+
+const 关键字定义的变量则不可以在使用后声明，也就是变量需要先声明再使用。
+
+```javascript
+carName = "Volvo";    // 在这里不可以使用 carName 变量
+const carName = "Volvo";
+```
+
+---
+
+# JavaScript JSON
+
+`JSON `是用于存储和传输数据的格式。
+
+`JSON `通常用于服务端向网页传递数据 。
+
+## 什么是 JSON?
+
+- JSON 英文全称 **J**ava**S**cript **O**bject **N**otation
+- JSON 是一种轻量级的数据交换格式。
+- JSON是独立的语言 *****
+- JSON 易于理解。
+
+## JSON 实例
+
+以下 JSON 语法定义了 sites 对象: 3 条网站信息（对象）的数组:
+
+```json
+{"sites":[
+    {"name":"Runoob", "url":"www.runoob.com"}, 
+    {"name":"Google", "url":"www.google.com"},
+    {"name":"Taobao", "url":"www.taobao.com"}
+]}
+```
+
+## JSON 格式化后为 JavaScript 对象
+
+JSON 格式在语法上与创建 JavaScript 对象代码是相同的。
+
+由于它们很相似，所以 JavaScript 程序可以很容易的将 JSON 数据转换为 JavaScript 对象。
+
+## JSON 语法规则
+
+- 数据为 键/值 对。
+- 数据由逗号分隔。
+- 大括号保存对象
+- 方括号保存数组
+
+## JSON 数据 - 一个名称对应一个值
+
+JSON 数据格式为 键/值 对，就像 JavaScript 对象属性。
+
+键/值对包括字段名称（在双引号中），后面一个冒号，然后是值：
+
+```javascript
+"name":"Runoob"
+```
+
+## JSON 对象
+
+JSON 对象保存在大括号内。
+
+就像在 JavaScript 中, 对象可以保存多个 键/值 对：
+
+```javascript
+{"name":"Runoob", "url":"www.runoob.com"}
+```
+
+## JSON 数组
+
+JSON 数组保存在中括号内。
+
+就像在 JavaScript 中, 数组可以包含对象：
+
+```javascript
+"sites":[
+    {"name":"Runoob", "url":"www.runoob.com"}, 
+    {"name":"Google", "url":"www.google.com"},
+    {"name":"Taobao", "url":"www.taobao.com"}
+]
+```
+
+在以上实例中，对象 "sites" 是一个数组，包含了三个对象。
+
+每个对象为站点的信息（网站名和网站地址）。
+
+## JSON 字符串转换为 JavaScript 对象
+
+通常我们从服务器中读取 JSON 数据，并在网页中显示数据。
+
+简单起见，我们网页中直接设置 JSON 字符串 
+
+首先，创建 JavaScript 字符串，字符串为 JSON 格式的数据：
+
+```javascript
+var text = '{ "sites" : [' +
+'{ "name":"Runoob" , "url":"www.runoob.com" },' +
+'{ "name":"Google" , "url":"www.google.com" },' +
+'{ "name":"Taobao" , "url":"www.taobao.com" } ]}';
+```
+
+然后，使用 JavaScript 内置函数 `JSON.parse()` 将字符串转换为 JavaScript 对象:
+
+```javascript
+var obj = JSON.parse(text);
+```
+
+最后，在你的页面中使用新的 JavaScript 对象：
+
+```javascript
+var text = '{ "sites" : [' +
+    '{ "name":"Runoob" , "url":"www.runoob.com" },' +
+    '{ "name":"Google" , "url":"www.google.com" },' +
+    '{ "name":"Taobao" , "url":"www.taobao.com" } ]}';
+
+obj = JSON.parse(text);
+document.getElementById("demo").innerHTML = obj.sites[1].name + " " + obj.sites[1].url;
+```
+
+## 相关函数
+
+| 函数                                                                             | 描述                               |
+|:------------------------------------------------------------------------------ |:-------------------------------- |
+| [`JSON.parse()`](https://www.runoob.com/js/javascript-json-parse.html)         | 用于将一个 JSON 字符串转换为 JavaScript 对象。 |
+| [`JSON.stringify()`](https://www.runoob.com/js/javascript-json-stringify.html) | 用于将 JavaScript 值转换为 JSON 字符串。    |
+
+---
+
+# javascript:void(0) 含义
+
+我们经常会使用到 `javascript:void(0)` 这样的代码，那么在 JavaScript 中 `javascript:void(0)` 代表的是什么意思呢？
+
+`javascript:void(0)` 中最关键的是 `void `关键字， `void `是 JavaScript 中非常重要的关键字，该操作符指定要计算一个表达式但是不返回值。
+
+语法格式如下：
+
+```html
+<head>
+<script type="text/javascript">
+<!--
+void func()
+javascript:void func()
+
+或者
+
+void(func())
+javascript:void(func())
+//-->
+</script>
+</head>
+```
+
+下面的代码创建了一个超级链接，当用户点击以后不会发生任何事。
+
+```html
+<a href="javascript:void(0)">单此处什么也不会发生</a>
+```
+
+当用户链接时，`void(0)` 计算为 `0`，但 Javascript 上没有任何效果。
+
+以下实例中，在用户点击链接后显示警告信息：
+
+```html
+<p>点击以下链接查看结果：</p>
+<a href="javascript:void(alert('Warning!!!'))">点我!</a>
+```
+
+以下实例中参数 a 将返回 `undefined `:
+
+```javascript
+<script>
+function getValue(){
+   var a, b, c;
+   a = void ( b = 5, c = 7 );
+   document.write('a = ' + a + ' b = ' + b +' c = ' + c );
+}
+</script>
+
+<p>点击以下按钮查看结果：</p>
+<form>
+    <input type="button" value="点我" onclick="getValue();" />
+</form>
+```
+
+## href="#"与href="javascript:void(0)"的区别
+
+`# `包含了一个位置信息，默认的锚是`#top` 也就是网页的上端。
+
+而`javascript:void(0)`, 仅仅表示一个死链接。
+
+在页面很长的时候会使用 `# `来定位页面的具体位置，格式为：`# + id`。
+
+如果你要定义一个死链接请使用` javascript:void(0) `。
+
+```html
+<p>点击以下链接查看不同效果：</p>
+<a href="javascript:void(0);">点我没有反应的!</a>
+<br>
+<a href="#pos">点我定位到指定位置!</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<p id="pos">尾部定位点</p>
+```
+
+---
+
+# JavaScript 代码规范
+
+所有的 JavaScript 项目适用同一种规范。
+
+## JavaScript 代码规范
+
+代码规范通常包括以下几个方面:
+
+- 变量和函数的命名规则
+- 空格，缩进，注释的使用规则。
+- 其他常用规范……
+
+规范的代码可以更易于阅读与维护。
+
+代码规范一般在开发前规定，可以跟你的团队成员来协商设置。
+
+## 变量名
+
+变量名推荐使用驼峰法来命名(**camelCase**):
+
+```javascript
+firstName = "John";
+lastName = "Doe";
+
+price = 19.90;
+tax = 0.20;
+
+fullPrice = price + (price * tax);
+```
+
+## 空格与运算符
+
+通常运算符 ( = + - * / ) 前后需要添加空格:
+
+```javascript
+var x = y + z;
+var values = ["Volvo", "Saab", "Fiat"];
+```
+
+## 代码缩进
+
+通常使用 4 个空格符号来缩进代码块：
+
+```javascript
+function toCelsius(fahrenheit) {
+    return (5 / 9) * (fahrenheit - 32);
+}
+```
+
+## 语句规则
+
+简单语句的通用规则:
+
+- 一条语句通常以分号作为结束符。
+
+```javascript
+var values = ["Volvo", "Saab", "Fiat"];
+
+var person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+};
+```
+
+复杂语句的通用规则:
+
+- 将左花括号放在第一行的结尾。
+- 左花括号前添加一空格。
+- 将右花括号独立放在一行。
+- 不要以分号结束一个复杂的声明。
+
+```javascript
+function toCelsius(fahrenheit) {
+    return (5 / 9) * (fahrenheit - 32);
+}
+```
+
+```javascript
+for (i = 0; i < 5; i++) {
+    x += i;
+}
+```
+
+```javascript
+if (time < 20) {
+    greeting = "Good day";
+} else {
+    greeting = "Good evening";
+}
+```
+
+## 对象规则
+
+对象定义的规则:
+
+- 将左花括号与类名放在同一行。
+- 冒号与属性值间有个空格。
+- 字符串使用双引号，数字不需要。
+- 最后一个属性-值对后面不要添加逗号。
+- 将右花括号独立放在一行，并以分号作为结束符号。
+
+```javascript
+var person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+};
+```
+
+短的对象代码可以直接写成一行:
+
+```javascript
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+```
+
+## 每行代码字符小于 80
+
+为了便于阅读每行字符建议小于数 80 个。
+
+如果一个 JavaScript 语句超过了 80 个字符，建议在 运算符或者逗号后换行。
+
+```javascript
+document.getElementById("demo").innerHTML =
+    "Hello Runoob.";
+```
+
+## 命名规则
+
+一般很多代码语言的命名规则都是类似的，例如:
+
+- 变量和函数为小驼峰法标识, 即除第一个单词之外，其他单词首字母大写（ **lowerCamelCase**）
+- 全局变量为大写 (**UPPERCASE** )
+- 常量 (如 PI) 为大写 (**UPPERCASE** )
+
+变量命名你是否使用这几种规则： **hyp-hens**, **camelCase**, 或 **under_scores** ?
+
+**HTML 和 CSS 的横杠(-)字符:**
+
+HTML5 属性可以以 data- (如：data-quantity, data-price) 作为前缀。
+
+CSS 使用 - 来连接属性名 (font-size)。
+
+**下划线:**
+
+很多程序员比较喜欢使用下划线(如：date_of_birth), 特别是在 SQL 数据库中。
+
+PHP 语言通常都使用下划线。
+
+**帕斯卡拼写法(PascalCase):**
+
+帕斯卡拼写法(PascalCase) 在 C 语言中语言较多。
+
+驼峰法：
+
+JavaScript 中通常推荐使用驼峰法，jQuery 及其他 JavaScript 库都使用驼峰法。
+
+## HTML 载入外部 JavaScript 文件
+
+使用简洁的格式载入 JavaScript 文件 ( type 属性不是必须的):
+
+```html
+<script src="myscript.js">
+```
+
+## 使用 JavaScript 访问 HTML 元素
+
+一个糟糕的 HTML 格式可能会导致 JavaScript 执行错误。
+
+以下两个 JavaScript 语句会输出不同结果:
+
+```javascript
+var obj = getElementById("Demo")
+
+var obj = getElementById("demo")
+```
+
+## 文件扩展名
+
+HTML 文件后缀可以是 **.html** (或 **.htm**)。
+
+CSS 文件后缀是 **.css** 。
+
+JavaScript 文件后缀是 **.js** 。
+
+## 使用小写文件名
+
+大多 Web 服务器 (Apache, Unix) 对大小写敏感： london.jpg 不能通过 London.jpg 访问。
+
+其他 Web 服务器 (Microsoft, IIS) 对大小写不敏感： london.jpg 可以通过 London.jpg 或 london.jpg 访问。
+
+你必须保持统一的风格，我们建议统一使用小写的文件名。

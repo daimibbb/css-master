@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+
+</body>
+<script>
+    var oP = document.createElement('p');
+    var body = document.getElementsByTagName('body');
+    body[0].appendChild(oP);
+    setInterval(function() {
+        var myDate = new Date();
+        var y = myDate.getFullYear();
+        var m = myDate.getMonth();
+        var d = myDate.getDay();
+
+        var h  = myDate.getHours();
+        var minu = myDate.getMinutes();
+        var s = myDate.getSeconds();
+        oP.innerHTML = '今天是' + y + '年' + m + '月' + d + '日 '
+        + h + ':' + toNum(minu) + ':' + toNum(s);
+    }, 1000);
+    function toNum(n) {
+        return n > 9 ? n : '0' + n;
+    }
+</script>
+</html>

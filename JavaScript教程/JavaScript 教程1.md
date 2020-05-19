@@ -16,7 +16,7 @@ JavaScript 非常容易学。
 <title>Title</title>
 <script>
 function displayDate() {
-	document.getElementById("demo").innerHTML=Date();
+    document.getElementById("demo").innerHTML=Date();
 }
 </script>
 </head>
@@ -69,11 +69,11 @@ document.write("<p>这是一个段落。</p>");
 
 [尝试一下 »](https://www.runoob.com/try/try.php?filename=tryjs_intro_document_write)
 
->您只能在 HTML 输出中使用 `document.write`。如果您在文档加载后使用该方法，会覆盖整个文档。
+> 您只能在 HTML 输出中使用 `document.write`。如果您在文档加载后使用该方法，会覆盖整个文档。
 
 ## JavaScript：对事件的反应
 
-```javascript
+```html
 <button type="button" onclick="alert('欢迎!')">点我!</button>
 ```
 
@@ -87,8 +87,8 @@ document.write("<p>这是一个段落。</p>");
 
 ```javascript
 function myFunction() {
-	x = document.getElementById("demo");  // 找到元素
-	x.innerHTML = "Hello JavaScript!";    // 改变内容
+    x = document.getElementById("demo");  // 找到元素
+    x.innerHTML = "Hello JavaScript!";    // 改变内容
 }
 ```
 
@@ -118,10 +118,6 @@ function changeImage() {
 <img id="myimage" onclick="changeImage()" src="/images/pic_bulboff.gif" width="100" height="180">
 ```
 
-```html
-以上实例中代码 element.src.match("bulbon") 的作用意思是：检索 <img id="myimage" onclick="changeImage()" src="/images/pic_bulboff.gif" width="100" height="180"> 里面 src 属性的值有没有包含 bulbon 这个字符串，如果存在字符串 bulbon，图片 src 更新为 bulboff.gif，若匹配不到 bulbon 字符串，src 则更新为 bulbon.gif
-```
-
 ## JavaScript：改变 HTML 样式
 
 改变 HTML 元素的样式，属于改变 HTML 属性的变种。
@@ -146,7 +142,7 @@ JavaScript 常用于验证用户的输入。
 <script>
     function myFunction() {
         var x=document.getElementById("demo").value;
-        if (x==""||isNaN(x)) {
+        if (x=="" || isNaN(x)) {
             alert("不是数字")
         }
     }
@@ -163,10 +159,10 @@ JavaScript 常用于验证用户的输入。
 
 [尝试一下 »](https://www.runoob.com/try/try.php?filename=tryjs_intro_validate)
 
-以上实例只是普通的验证，如果要在生产环境中使用，需要严格判断，如果输入的空格，或者连续空格 isNaN 是判别不出来的。可以添加正则来判断（后续章节会说明）：
+以上实例只是普通的验证，如果要在生产环境中使用，需要严格判断，如果输入的空格，或者连续空格， `isNaN `是判别不出来的。可以添加正则来判断（后续章节会说明）：
 
 ```javascript
-if (isNaN(x)||x.replace(/(^\s*)|(\s*$)/g,"")=="") {
+if (isNaN(x) || x.replace(/(^\s*)|(\s*$)/g, "")=="") {
     alert("不是数字");
 }
 ```
@@ -176,7 +172,8 @@ if (isNaN(x)||x.replace(/(^\s*)|(\s*$)/g,"")=="") {
 ```javascript
 function changeImage() {
     var s = document.getElementById("demo");
-     s.src = s.src.match('bulboff')?"/images/pic_bulbon.gif":"/images/pic_bulboff.gif";
+     s.src = s.src.match('bulboff') ? 
+             "/images/pic_bulbon.gif": "/images/pic_bulboff.gif";
 }
 ```
 
@@ -188,7 +185,7 @@ HTML 中的脚本必须位于 `<script> `与 `</script>` 标签之间。
 
 脚本可被放置在 HTML 页面的 `<body>` 和` <head>` 部分中。
 
-## \<script> 标签
+## <script> 标签
 
 如需在 HTML 页面中插入 JavaScript，请使用 `<script>` 标签。
 
@@ -202,9 +199,9 @@ alert("我的第一个 JavaScript");
 </script>
 ```
 
-您无需理解上面的代码。只需明白，浏览器会解释并执行位于` <script>` 和 `</script>`之间的 JavaScript 代码 
+您无需理解上面的代码。只需明白，浏览器会解释并执行位于` <script>` 和 `</script>`之间的 JavaScript 代码 。
 
-## \<body> 中的 JavaScript
+## <body> 中的 JavaScript
 
 在本例中，JavaScript 会在页面加载时向 HTML 的 `<body>` 写文本：
 
@@ -234,7 +231,7 @@ document.write("<p>这是一个段落</p>");
 
 您将在稍后的章节学到更多有关 JavaScript 函数和事件的知识。
 
-## 在 \<head> 或者 \<body> 的JavaScript
+## 在 <head> 或者 <body> 的JavaScript
 
 您可以在 HTML 文档中放入不限数量的脚本。
 
@@ -242,19 +239,18 @@ document.write("<p>这是一个段落</p>");
 
 通常的做法是把函数放入 \<head> 部分中，或者放在页面底部。这样就可以把它们安置到同一处位置，不会干扰页面的内容。
 
-## \<head> 中的 JavaScript 函数
+## <head> 中的 JavaScript 函数
 
 在本例中，我们把一个 JavaScript 函数放置到 HTML 页面的 `<head>` 部分。
 
 该函数会在点击按钮时被调用：
 
-```javascript
+```html
 <!DOCTYPE html>
 <html>
 <head>
 <script>
-function myFunction()
-{
+function myFunction() {
     document.getElementById("demo").innerHTML="我的第一个 JavaScript 函数";
 }
 </script>
@@ -267,17 +263,7 @@ function myFunction()
 </html>
 ```
 
-<script>
-function myFunction()
-{
-    document.getElementById("demo").innerHTML="我的第一个 JavaScript 函数";
-}
-</script>
-<h1>我的 Web 页面</h1>
-<p id="demo">一个段落</p>
-<button type="button" onclick="myFunction()">尝试一下</button>
-
-## \<body> 中的 JavaScript 函数
+## <body> 中的 JavaScript 函数
 
 在本例中，我们把一个 JavaScript 函数放置到 HTML 页面的 `<body>` 部分。
 
@@ -291,8 +277,7 @@ function myFunction()
 <p id="demo">一个段落</p>
 <button type="button" onclick="myFunction()">尝试一下</button>
 <script>
-function myFunction()
-{
+function myFunction() {
     document.getElementById("demo").innerHTML="我的第一个 JavaScript 函数";
 }
 </script>
@@ -304,9 +289,9 @@ function myFunction()
 
 也可以把脚本保存到外部文件中。外部文件通常包含被多个网页使用的代码。
 
-外部 JavaScript 文件的文件扩展名是 .js。
+外部 JavaScript 文件的文件扩展名是 `.js`。
 
-如需使用外部文件，请在 `<script>` 标签的 "src" 属性中设置该 .js 文件：
+如需使用外部文件，请在 `<script>` 标签的 "*src*" 属性中设置该 `.js` 文件：
 
 ```html
 <!DOCTYPE html>
@@ -322,8 +307,7 @@ function myFunction()
 myScript.js 文件代码如下：
 
 ```javascript
-function myFunction()
-{
+function myFunction() {
     document.getElementById("demo").innerHTML="我的第一个 JavaScript 函数";
 }
 ```
@@ -354,7 +338,7 @@ JavaScript 可以通过不同的方式来输出数据：
 <h1>我的第一个页面</h1>
 <p>我的第一个段落。</p>
 <script>
-window.alert(5 + 6);
+    window.alert(5 + 6);
 </script>
 </body>
 </html>
@@ -362,78 +346,61 @@ window.alert(5 + 6);
 
 ## 操作 HTML 元素
 
-如需从 JavaScript 访问某个 HTML 元素，您可以使用 document.getElementById(*id*) 方法。
+如需从 JavaScript 访问某个 HTML 元素，您可以使用 `document.getElementById(id)` 方法。
 
-请使用 "id" 属性来标识 HTML 元素，并 innerHTML 来获取或插入元素内容：
+请使用 "*id*" 属性来标识 HTML 元素，并 innerHTML 来获取或插入元素内容：
 
 ```html
 <!DOCTYPE html>
 <html>
 <body>
-
 <h1>我的第一个 Web 页面</h1>
-
 <p id="demo">我的第一个段落</p>
-
 <script>
-document.getElementById("demo").innerHTML = "段落已修改。";
+    document.getElementById("demo").innerHTML = "段落已修改。";
 </script>
-
 </body>
 </html>
 ```
 
 ## 写到 HTML 文档
 
-出于测试目的，您可以将JavaScript直接写在HTML 文档中：
+出于测试目的，您可以将JavaScript直接写在HTML文档中：
 
 ```html
 <!DOCTYPE html>
 <html>
 <body>
-
 <h1>我的第一个 Web 页面</h1>
-
 <p>我的第一个段落。</p>
-
 <script>
-document.write(Date());
+    document.write(Date());
 </script>
-
 </body>
 </html>
 ```
 
-<script>
-document.write(Date());
-</script>
-
-如果在文档已完成加载后执行 document.write，整个 HTML 页面将被覆盖。
+如果在文档已完成加载后执行`document.write`，整个 HTML 页面将被覆盖。
 
 ```html
 <!DOCTYPE html>
 <html>
 <body>
-
 <h1>我的第一个 Web 页面</h1>
-
 <p>我的第一个段落。</p>
-
 <button onclick="myFunction()">点我</button>
-
 <script>
 function myFunction() {
-   	document.write(Date());
+       document.write(Date());
 }
 </script>
-
 </body>
 </html>
 ```
 
 ## 写到控制台
 
-如果您的浏览器支持调试，你可以使用 **console.log()** 方法在浏览器中显示 JavaScript 值。
+如果您的浏览器支持调试，你可以使用 `console.log()` 方法在浏览器中显示 JavaScript 值。
 
 浏览器中使用 F12 来启用调试模式， 在调试窗口中点击 "Console" 菜单。
 
@@ -441,16 +408,13 @@ function myFunction() {
 <!DOCTYPE html>
 <html>
 <body>
-
 <h1>我的第一个 Web 页面</h1>
-
 <script>
-a = 5;
-b = 6;
-c = a + b;
-console.log(c);
+    a = 5;
+    b = 6;
+    c = a + b;
+    console.log(c);
 </script>
-
 </body>
 </html>
 ```
@@ -463,11 +427,11 @@ console.log(c);
 
 这个方法是 HTML DOM 中定义的。
 
-DOM (Document Object Model)（文档对象模型）是用于访问 HTML 元素的正式 W3C 标准。
+**DOM** (**D**ocument **O**bject **M**odel)（文档对象模型）是用于访问 HTML 元素的正式 W3C 标准。
 
-格式\<script>
+**格式**
 
-那些老旧的实例可能会在 \<script> 标签中使用 type="text/javascript"。
+那些老旧的实例可能会在 `<script>` 标签中使用 `type="text/javascript"`。
 
 现在已经不必这样做了。
 
@@ -475,37 +439,33 @@ JavaScript 是所有现代浏览器以及 HTML5 中的默认脚本语言。
 
 **脚本位置**
 
-在 \<head> 或者 \<body> 的JavaScript
-
-外部脚本不能包含 \<script> 标签。
+在 `<head>` 或者 `<body>` 的JavaScript，外部脚本不能包含` <script>` 标签。
 
 **输出数据**
 
-- window.alert() 弹出警告框。
+- `window.alert()` 弹出警告框。
 
-- document.write() 方法将内容写到 HTML 文档中。
+- `document.write()` 方法将内容写到 HTML 文档中。
 
-- innerHTML 写入到 HTML 元素。
+- `.innerHTML `写入到 HTML 元素。
 
-- console.log() 写入到浏览器的控制台。
+- `console.log()` 写入到浏览器的控制台。
 
 **输出内容**
 
-使用 document.write() 向文档输出写内容。
+使用 `document.write()` 向文档输出写内容。
 
-如果在文档已完成加载后执行 document.write，整个 HTML 页面将被覆盖
+如果在文档已完成加载后执行 `document.write()`，整个 HTML 页面将被覆盖
 
 **写到控制台(调试模式)**
 
-使用 console.log() 方法在浏览器中显示 JavaScript 值。
+使用 `console.log()` 方法在浏览器中显示 JavaScript 值。
 
 F12 启用调试模式， 在调试窗口中点击 "Console" 菜单。
 
----
-
 **window.alert 的补充:**
 
-**window.alert(5+6)** 与 **window.alert("5+6")** 输出的值是不一样的。window.alert(5+6) 会输出 11，而window.alert("5+6") 会输出 5+6。这是因为当用引号时会认为引号中是字符串，从而直接将引号中的内容打印出来。
+`window.alert(5+6)` 与 `window.alert("5+6")` 输出的值是不一样的。`window.alert(5+6) `会输出 `11`，而`window.alert("5+6") `会输出 `5+6`。这是因为当用引号时会认为引号中是字符串，从而直接将引号中的内容打印出来。
 
 ---
 
@@ -521,7 +481,7 @@ JavaScript 是一个脚本语言。
 
 ## JavaScript 字面量
 
-在编程语言中，一般固定值称为字面量，如 3.14。
+在编程语言中，一般固定值称为字面量，如 `3.14`。
 
 **数字（Number）字面量** 可以是整数或者是小数，或者是科学计数(`e`)。
 
@@ -591,11 +551,11 @@ y = 6
 z = (x + y) * 10
 ```
 
-avaScript语言有多种类型的运算符：
+JavaScript语言有多种类型的运算符：
 
-| 类型                   | 实例      | 描述                   |
-| :--------------------- | :-------- | :--------------------- |
-| 赋值，算术和位运算符   | = + - * / | 在 JS 运算符中描述     |
+| 类型          | 实例        | 描述            |
+|:----------- |:--------- |:------------- |
+| 赋值，算术和位运算符  | = + - * / | 在 JS 运算符中描述   |
 | 条件，比较及逻辑运算符 | == != < > | 在 JS 比较运算符中描述 |
 
 ## JavaScript 语句
@@ -626,98 +586,23 @@ JavaScript 同样保留了一些关键字，这些关键字在当前的语言版
 
 以下是 JavaScript 中最重要的保留字（按字母顺序）：
 
-<table class="reference">
-<tbody><tr>
-<td>abstract</td>
-<td>else</td>
-<td>instanceof</td>
-<td>super</td>
-</tr><tr>
-</tr><tr>
-<td>boolean</td>
-<td>enum</td>
-<td>int</td>
-<td>switch</td>
-</tr><tr>
-</tr><tr>
-<td>break</td>
-<td>export</td>
-<td>interface</td>
-<td>synchronized</td>
-</tr><tr>
-</tr><tr>
-<td>byte</td>
-<td>extends</td>
-<td>let</td>
-<td>this</td>
-</tr><tr>
-</tr><tr>
-<td>case</td>
-<td>false</td>
-<td>long</td>
-<td>throw</td>
-</tr><tr>
-</tr><tr>
-<td>catch</td>
-<td>final</td>
-<td>native</td>
-<td>throws</td>
-</tr><tr>
-</tr><tr>
-<td>char</td>
-<td>finally</td>
-<td>new</td>
-<td>transient</td>
-</tr><tr>
-</tr><tr>
-<td>class</td>
-<td>float</td>
-<td>null</td>
-<td>true</td>
-</tr><tr>
-</tr><tr>
-<td>const</td>
-<td>for</td>
-<td>package</td>
-<td>try</td>
-</tr><tr>
-</tr><tr>
-<td>continue</td>
-<td>function</td>
-<td>private</td>
-<td>typeof</td>
-</tr><tr>
-</tr><tr>
-<td>debugger</td>
-<td>goto</td>
-<td>protected</td>
-<td>var</td>
-</tr><tr>
-</tr><tr>
-<td>default</td>
-<td>if</td>
-<td>public</td>
-<td>void</td>
-</tr><tr>
-</tr><tr>
-<td>delete</td>
-<td>implements</td>
-<td>return</td>
-<td>volatile</td>
-</tr><tr>
-</tr><tr>
-<td>do</td>
-<td>import</td>
-<td>short</td>
-<td>while</td>
-</tr><tr>
-</tr><tr>
-<td>double</td>
-<td>in</td>
-<td>static</td>
-<td>with</td>
-</tr><tr>
-</tr></tbody></table>
+```javascript
+abstract        else        instanceof        super    
+boolean         enum        int               switch
+break           export      interface         synchronized
+byte            extends     let               this
+case            false       long              throw
+catch           final       native            throws
+char            finally     new               transient
+class           float       null              true
+const           for         package           try
+continue        funcion     private           typeof
+debugger        goto        protected         var
+default         if          public            void
+delete          inplements  return            volatile
+do              import      short             while    
+double          in          static            with       
+```
 
 ## JavaScript 注释
 
@@ -732,11 +617,11 @@ JavaScript 同样保留了一些关键字，这些关键字在当前的语言版
 JavaScript 有多种数据类型：数字，字符串，数组，对象等等：
 
 ```javascript
-var length = 16;                                  // Number 通过数字字面量赋值 
-var points = x * 10;                              // Number 通过表达式字面量赋值
-var lastName = "Johnson";                         // String 通过字符串字面量赋值
-var cars = ["Saab", "Volvo", "BMW"];              // Array  通过数组字面量赋值
-var person = {firstName:"John", lastName:"Doe"};  // Object 通过对象字面量赋值
+var length = 16;                                // Number 通过数字字面量赋值 
+var points = x * 10;                            // Number 通过表达式字面量赋值
+var lastName = "Johnson";                       // String 通过字符串字面量赋值
+var cars = ["Saab", "Volvo", "BMW"];            // Array  通过数组字面量赋值
+var person = {firstName:"John", lastName:"Doe"};// Object 通过对象字面量赋值
 ```
 
 ## 数据类型的概念
@@ -751,7 +636,7 @@ var person = {firstName:"John", lastName:"Doe"};  // Object 通过对象字面�
 16 + "Volvo"
 ```
 
-16 加上 "Volvo" 是如何计算呢? 以上会产生一个错误还是输出以下结果呢？
+`16 `加上 "`Volvo`" 是如何计算呢? 以上会产生一个错误还是输出以下结果呢？
 
 ```javascript
 "16Volvo"
@@ -766,7 +651,7 @@ JavaScript 语句可以写在函数内，函数可以重复引用：
 ```javascript
 // 返回 a 乘以 b 的结果
 function myFunction(a, b) {
-   	return a * b;                               
+       return a * b;                               
 }
 ```
 
@@ -803,7 +688,8 @@ JavaScript是弱类型编程语言,定义变量都使用 `var` 定义,与 Java �
 有个情况需要特别注意: **typeof 不能用来判断是 Array 还是Object**
 
 ```javascript
-var arr = [] typeof(arr) === 'object' // true
+var arr = [];
+typeof(arr) === 'object' // true
 ```
 
 结果为 **true**。
@@ -813,15 +699,13 @@ var arr = [] typeof(arr) === 'object' // true
 **1、使用 isArray 方法**
 
 ```javascript
-var cars=new Array();
-cars[0]="Saab";
-cars[1]="Volvo";
-cars[2]="BMW";
+var cars = new Array();
+cars[0] = "Saab";
+cars[1] = "Volvo";
+cars[2] = "BMW";
 // 判断是否支持该方法
-if (Array.isArray) {
-    if(Array.isArray(cars)) {
-        document.write("该对象是一个数组。") ;
-    }
+if(Array.isArray(cars)) {
+    console.log("该对象是一个数组。") ;
 }
 ```
 
@@ -834,7 +718,7 @@ cars[1]="Volvo";
 cars[2]="BMW";
 
 if (cars instanceof Array) {
-    document.write("该对象是一个数组。") ;
+    console.log("该对象是一个数组。") ;
 }
 ```
 
@@ -850,7 +734,7 @@ JavaScript 语句是发给浏览器的命令。
 
 这些命令的作用是告诉浏览器要做的事情。
 
-下面的 JavaScript 语句向 id="demo" 的 HTML 元素输出文本 "你好 Dolly" ：
+下面的 JavaScript 语句向 `id="demo"` 的 HTML 元素输出文本 "你好 Dolly" ：
 
 ```javascript
 document.getElementById("demo").innerHTML = "你好 Dolly";
@@ -914,22 +798,22 @@ JavaScript 语句通常以一个 **语句标识符** 为开始，并执行该语
 
 下表列出了 JavaScript 语句标识符 (关键字) ：
 
-| 语句         | 描述                                                         |
-| :----------- | :----------------------------------------------------------- |
-| break        | 用于跳出循环。                                               |
-| catch        | 语句块，在 try 语句块执行出错时执行 catch 语句块。           |
-| continue     | 跳过循环中的一个迭代。                                       |
-| do ... while | 执行一个语句块，在条件语句为 true 时继续执行该语句块。       |
-| for          | 在条件语句为 true 时，可以将代码块执行指定的次数。           |
-| for ... in   | 用于遍历数组或者对象的属性（对数组或者对象的属性进行循环操作）。 |
-| function     | 定义一个函数                                                 |
-| if ... else  | 用于基于不同的条件来执行不同的动作。                         |
-| return       | 退出函数                                                     |
-| switch       | 用于基于不同的条件来执行不同的动作。                         |
-| throw        | 抛出（生成）错误 。                                          |
-| try          | 实现错误处理，与 catch 一同使用。                            |
-| var          | 声明一个变量。                                               |
-| while        | 当条件语句为 true 时，执行语句块。                           |
+| 语句             | 描述                                  |
+|:-------------- |:----------------------------------- |
+| `break`        | 用于跳出循环。                             |
+| `catch`        | 语句块，在 `try `语句块执行出错时执行 `catch `语句块。 |
+| `continue`     | 跳过循环中的一个迭代。                         |
+| `do ... while` | 执行一个语句块，在条件语句为 `true `时继续执行该语句块。    |
+| `for`          | 在条件语句为 `true `时，可以将代码块执行指定的次数。      |
+| `for ... in`   | 用于遍历数组或者对象的属性（对数组或者对象的属性进行循环操作）。    |
+| `function`     | 定义一个函数                              |
+| `if ... else`  | 用于基于不同的条件来执行不同的动作。                  |
+| `return`       | 退出函数                                |
+| `switch`       | 用于基于不同的条件来执行不同的动作。                  |
+| `throw`        | 抛出（生成）错误 。                          |
+| `try`          | 实现错误处理，与 `catch `一同使用。              |
+| `var`          | 声明一个变量。                             |
+| `while`        | 当条件语句为 `true `时，执行语句块。              |
 
 ## 空格
 
@@ -980,10 +864,10 @@ document.getElementById("myP").innerHTML="这是我的第一个段落。";
 
 ```javascript
 /*
-下面的这些代码会输出
-一个标题和一个段落
-并将代表主页的开始
-*/
+ * 下面的这些代码会输出
+ * 一个标题和一个段落
+ * 并将代表主页的开始
+ */
 document.getElementById("myH1").innerHTML="欢迎来到我的主页";
 document.getElementById("myP").innerHTML="这是我的第一个段落。";
 ```
@@ -1001,9 +885,9 @@ document.getElementById("myP").innerHTML="这是我的第一个段落。";
 
 ```java
 /*
-document.getElementById("myH1").innerHTML="欢迎来到我的主页";
-document.getElementById("myP").innerHTML="这是我的第一个段落。";
-*/
+ * document.getElementById("myH1").innerHTML="欢迎来到我的主页";
+ * document.getElementById("myP").innerHTML="这是我的第一个段落。";
+ */
 ```
 
 ## 在行末使用注释
@@ -1029,19 +913,19 @@ var z=x+y;
 
 ## JavaScript 变量
 
-与代数一样，JavaScript 变量可用于存放值（比如 x=5）和表达式（比如 z=x+y）。
+与代数一样，JavaScript 变量可用于存放值（比如` x=5`）和表达式（比如` z=x+y`）。
 
-变量可以使用短名称（比如 x 和 y），也可以使用描述性更好的名称（比如 age, sum, totalvolume）。
+变量可以使用短名称（比如` x` 和 `y`），也可以使用描述性更好的名称（比如 `age`, `sum`, `totalvolume`）。
 
 - 变量必须以字母开头
-- 变量也能以 $ 和 _ 符号开头（不过我们不推荐这么做）
-- 变量名称对大小写敏感（y 和 Y 是不同的变量）
+- 变量也能以`$` 和`_` 符号开头（不过我们不推荐这么做）
+- 变量名称对大小写敏感（`y` 和 `Y` 是不同的变量）
 
 ## JavaScript 数据类型
 
 JavaScript 变量还能保存其他数据类型，比如文本值 (`name="Bill Gates"`)。
 
-在 JavaScript 中，类似 "Bill Gates" 这样一条文本被称为字符串。
+在 JavaScript 中，类似 "`Bill Gates`" 这样一条文本被称为字符串。
 
 JavaScript 变量有很多种类型，但是现在，我们只关注数字和字符串。
 
@@ -1050,22 +934,22 @@ JavaScript 变量有很多种类型，但是现在，我们只关注数字和字
 当您向变量赋的值是数值时，不要使用引号。如果您用引号包围数值，该值会被作为文本来处理。
 
 ```javascript
-var pi=3.14;
-var person="John Doe";
-var answer='Yes I am!';
+var pi = 3.14;
+var person = "John Doe";
+var answer = 'Yes I am!';
 ```
 
 ## 声明（创建） JavaScript 变量
 
 在 JavaScript 中创建变量通常称为"声明"变量。
 
-我们使用 `var `关键词来声明变量：
+我们使用 `var`关键词来声明变量：
 
 ```javascript
 var carname;
 ```
 
-量声明之后，该变量是空的（它没有值）。
+变量声明之后，该变量是空的（它没有值）。
 
 如需向变量赋值，请使用等号：
 
@@ -1079,40 +963,40 @@ carname = "Volvo";
 var carname = "Volvo";
 ```
 
-在下面的例子中，我们创建了名为 carname 的变量，并向其赋值 "Volvo"，然后把它放入 id="demo" 的 HTML 段落中：
+在下面的例子中，我们创建了名为 `carname `的变量，并向其赋值 "`Volvo`"，然后把它放入 `id="demo"` 的 HTML 段落中：
 
 ```javascript
-var carname="Volvo";
-document.getElementById("demo").innerHTML=carname;
+var carname = "Volvo";
+document.getElementById("demo").innerHTML = carname;
 ```
 
 ## 一条语句，多个变量
 
-您可以在一条语句中声明很多变量。该语句以 var 开头，并使用逗号分隔变量即可：
+您可以在一条语句中声明很多变量。该语句以 `var`开头，并使用逗号分隔变量即可：
 
 ```javascript
-var lastname="Doe", age=30, job="carpenter";
+var lastname = "Doe", age = 30, job = "carpenter";
 ```
 
 声明也可横跨多行：
 
 ```javascript
-var lastname="Doe",
-age=30,
-job="carpenter";
+var lastname = "Doe",
+age = 30,
+job = "carpenter";
 ```
 
 一条语句中声明的多个不可以赋同一个值:
 
 ```javascript
-var x,y,z=1;
+var x, y, z=1;
 ```
 
-x,y 为 `undefined`， z 为 1。
+`x`, `y` 为 `undefined`， `z` 为 `1`。
 
 ## Value = undefined
 
-在计算机程序中，经常会声明无值的变量。未使用值来声明的变量，其值实际上是 undefined。
+在计算机程序中，经常会声明无值的变量。未使用值来声明的变量，其值实际上是 `undefined`。
 
 在执行过以下语句后，变量 *carname* 的值将是 `undefined`：
 
@@ -1124,7 +1008,7 @@ var carname;
 
 如果重新声明 JavaScript 变量，该变量的值不会丢失：
 
-在以下两条语句执行后，变量 carname 的值依然是 "Volvo"：
+在以下两条语句执行后，变量 *carname* 的值依然是 "`Volvo`"：
 
 ```javascript
 var carname="Volvo"; 
@@ -1133,7 +1017,7 @@ var carname;
 
 ## JavaScript 算数
 
-您可以通过 JavaScript 变量来做算数，使用的是 = 和 + 这类运算符：
+您可以通过 JavaScript 变量来做算数，使用的是 `=` 和 `+` 这类运算符：
 
 ```javascript
 y = 5;
@@ -1161,7 +1045,7 @@ function varTest() {
         var x = 2;       // 同样的变量!
         console.log(x);  // 2
     }
-    console.log(x);  // 2
+    console.log(x);      // 2
 }
 
 function letTest() {
@@ -1170,13 +1054,13 @@ function letTest() {
         let x = 2;       // 不同的变量    
         console.log(x);  // 2  
     }
-    console.log(x);  // 1
+    console.log(x);      // 1
 }
 ```
 
 ---
 
-avascript声明变量的时候，虽然用var关键字声明和不用关键字声明，很多时候运行并没有问题，但是这两种方式还是有区别的。可以正常运行的代码并不代表是合适的代码。
+Javascript声明变量的时候，虽然用`var`关键字声明和不用关键字声明，很多时候运行并没有问题，但是这两种方式还是有区别的。可以正常运行的代码并不代表是合适的代码。
 
 ```javascript
 // num1为全局变量，num2为window的一个属性
@@ -1198,7 +1082,7 @@ function model() {
 
 ---
 
-`const `关键字用来声明 JavaScript中的常量（与变量相对，不可修改，但同样是用于存储信息的"容器"。），常量的值不能通过重新赋值来改变，并且不能重新声明。
+`const`关键字用来声明 JavaScript中的常量（与变量相对，不可修改，但同样是用于存储信息的"容器"。），常量的值不能通过重新赋值来改变，并且不能重新声明。
 
 代码：
 
@@ -1224,7 +1108,7 @@ console.log("a is: " + a);
 var a = 1;
 var a = 'x';
 console.log(a);
-// 输出 'x'
+//输出 'x'
 ```
 
 **JavaScript 允许重复定义函数**
@@ -1300,33 +1184,28 @@ console.log(a());   //输出 "function"
 
 ```javascript
 function a() {
-    console.log(this);  //输出 window{...}
+    console.log(this);  //输出 Window {...}
     this.a = 1;         //即 window.a = 1，此时window下的function a已经被该变量覆盖了。
     var a = 5;          //下面的这几个变量都是局部变量，仅在花括号范围内有效。  
     a = 10;
     var v = "value"
     return "function";
 }
-console.log(a);         //输出 function a {...}
+console.log(a);         //输出 function a () {...}
 console.log(a());       //输出 "function"
 console.log(a);         //输出 1
-console.log(v);
-/*
-输出
-Uncaught ReferenceError: v is not defined
-    (anonymous function) @ mycolor.html:15
-*/
+console.log(v);         //输出tab
 ```
 
 ---
 
 # JavaScript 数据类型
 
-**值类型(基本类型)**：字符串（String）、数字(Number)、布尔(Boolean)、对空（Null）、未定义（Undefined）、Symbol。
+**值类型(基本类型)**：字符串（`String`）、数字(`Number`)、布尔(`Boolean`)、对空（`Null`）、未定义（`Undefined`）、`Symbol`。
 
-**引用数据类型**：对象(Object)、数组(Array)、函数(Function)。
+**引用数据类型**：对象(`Object`)、数组(`Array`)、函数(`Function`)。
 
->**注：***Symbol 是 ES6 引入了一种新的原始数据类型，表示独一无二的值。*
+> **注：***Symbol 是 ES6 引入了一种新的原始数据类型，表示独一无二的值。*
 
 ## JavaScript 拥有动态类型
 
@@ -1345,16 +1224,16 @@ var x = "John";      // 现在 x 为字符串
 字符串可以是引号中的任意文本。您可以使用单引号或双引号：
 
 ```javascript
-var carname="Volvo XC60";
-var carname='Volvo XC60';
+var carname = "Volvo XC60";
+var carname = 'Volvo XC60';
 ```
 
 您可以在字符串中使用引号，只要不匹配包围字符串的引号即可：
 
 ```javascript
-var answer="It's alright";
-var answer="He is called 'Johnny'";
-var answer='He is called "Johnny"';
+var answer = "It's alright";
+var answer = "He is called 'Johnny'";
+var answer = 'He is called "Johnny"';
 ```
 
 ## JavaScript 数字
@@ -1362,79 +1241,76 @@ var answer='He is called "Johnny"';
 JavaScript 只有一种数字类型。数字可以带小数点，也可以不带：
 
 ```javascript
-var x1=34.00;      //使用小数点来写
-var x2=34;         //不使用小数点来写
+var x1 = 34.00;      //使用小数点来写
+var x2 = 34;         //不使用小数点来写
 ```
 
-大或极小的数字可以通过科学（指数）计数法来书写：
+极大或极小的数字可以通过科学（指数）计数法来书写：
 
 ```javascript
-var y=123e5;      // 12300000
-var z=123e-5;     // 0.00123
+var y = 123e5;      // 12300000
+var z = 123e-5;     // 0.00123
 ```
 
 ## JavaScript 布尔
 
-布尔（逻辑）只能有两个值：true 或 false。
+布尔（逻辑）只能有两个值：`true`或 `false`。
 
 ```javascript
-var x=true;
-var y=false;
+var x = true;
+var y = false;
 ```
 
 ```javascript
-var cars=new Array();
-cars[0]="Saab";
-cars[1]="Volvo";
-cars[2]="BMW";
+var cars = new Array();
+cars[0] = "Saab";
+cars[1] = "Volvo";
+cars[2] = "BMW";
 ```
 
 或者 (condensed array):
 
 ```javascript
-var cars=new Array("Saab","Volvo","BMW");
-```
-
-```javascript
-var cars=["Saab","Volvo","BMW"];
+var cars = new Array("Saab","Volvo","BMW");
+var cars = ["Saab","Volvo","BMW"];
 ```
 
 ## JavaScript 对象
 
-对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义。属性由逗号分隔：
+对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (`name : value`) 来定义。属性由逗号分隔：
 
 ```javascript
-var person={firstname:"John", lastname:"Doe", id:5566};
+var person = {firstname: "John", lastname: "Doe", id: 5566};
 ```
 
-上面例子中的对象 (person) 有三个属性：firstname、lastname 以及 id。
+上面例子中的对象 (*person*) 有三个属性：*firstname*、*lastname *以及 *id*。
 
 空格和折行无关紧要。声明可横跨多行：
 
 ```javascript
-var person={
-firstname : "John",
-lastname  : "Doe",
-id        :  5566
+var person = {
+    firstname : "John",
+    lastname  : "Doe",
+    id        :  5566
 };
 ```
 
 对象属性有两种寻址方式：
 
 ```javascript
-name=person.lastname;
-name=person["lastname"];
+name = person.lastname;
+name = person["lastname"];
 ```
 
 ## Undefined 和 Null
 
-Undefined 这个值表示变量不含有值。
+`Undefined` 这个值表示变量不含有值。
 
-可以通过将变量的值设置为 null 来清空变量。
+可以通过将变量的值设置为 `null`来清空变量。
 
 ```javascript
-cars=null;
-person=null;
+cars = null;
+person = null;
 ```
 
 ## 声明变量类型
@@ -1454,9 +1330,10 @@ var person = new Object;
 数组有四种方式：
 
 ```javascript
-var arr1 = new Array('a', 'b', 'c');    //这是一个预定义的数组，在创建时初始化
-var arr2 = ['a', 'b', 'c' ];       //同样是在创建时初始化，但是这种创建更为简洁直观
-var arr3 = new Array( );   var arr4 = [ ];     //这两种是创建空的数组
+var arr1 = new Array('a', 'b', 'c'); //这是一个预定义的数组，在创建时初始化
+var arr2 = ['a', 'b', 'c' ]; //同样是在创建时初始化，但是这种创建更为简洁直观
+var arr3 = new Array(); 
+var arr4 = []; //这两种是创建空的数组
 ```
 
 在数组操作中，最值得注意的是下标的使用，容易出错
@@ -1464,7 +1341,7 @@ var arr3 = new Array( );   var arr4 = [ ];     //这两种是创建空的数组
 对象的创建，一般推荐使用
 
 ```javascript
-var people = {name : 'Tom', age : 21 , eat : function(){  }    }
+var people = { name: 'Tom', age: 21, eat: function(){} }
 ```
 
 也可先创建对象再追加属性和方法
@@ -1473,7 +1350,7 @@ var people = {name : 'Tom', age : 21 , eat : function(){  }    }
 var people = new Object();
 people.name = 'Tom';   
 people.age = 21;  
-people.eat = function(){  }
+people.eat = function(){};
 ```
 
 ---
@@ -1483,18 +1360,18 @@ people.eat = function(){  }
 第一种：
 
 ```javascript
-function Demo(){
-    var obj=new Object();
-    obj.name="张思";
-    obj.age=12;
-    obj.firstF=function(){
+function Demo() {
+    var obj = new Object();
+    obj.name = "test";
+    obj.age = 12;
+    obj.firstF = function(){
     }
-    obj.secondF=function(){
+    obj.secondF = function(){
     }
     return obj;
 }
 
-var one=Demo();
+var one = Demo();
 // 调用输出
 document.write(one.age);
 ```
@@ -1502,17 +1379,16 @@ document.write(one.age);
 第二种：
 
 ```javascript
-function Demo(){
-    this.name="张思";
-    this.age=12;
-    this.firstF=function(){
+function Demo() {
+    this.name = "test";
+    this.age = 12;
+    this.firstF = function(){
     }
-    this.secondF=function(){
+    this.secondF  =function(){
     }
 }
 
-var one=new Demo
-
+var one = new Demo()
 // 调用输出
 document.write(one.age);
 ```
@@ -1522,10 +1398,10 @@ document.write(one.age);
 就算变量定义的是数组格式，**typeof** 返回的数据类型还是 **object** :
 
 ```javascript
-var cars=new Array();
-cars[0]="Saab";
-cars[1]="Volvo";
-cars[2]="BMW";
+var cars  = new Array();
+cars[0] = "Saab";
+cars[1] = "Volvo";
+cars[2] = "BMW";
 document.write(typeof cars); // object
 ```
 
@@ -1534,25 +1410,23 @@ document.write(typeof cars); // object
 **1、使用 isArray 方法**
 
 ```javascript
-var cars=new Array();
-cars[0]="Saab";
-cars[1]="Volvo";
-cars[2]="BMW";
+var cars = new Array();
+cars[0] = "Saab";
+cars[1] = "Volvo";
+cars[2] = "BMW";
 // 判断是否支持该方法
-if (Array.isArray) {
-    if(Array.isArray(cars)) {
-        document.write("该对象是一个数组。") ;
-    }
+if(Array.isArray(cars)) {
+    document.write("该对象是一个数组。") ;
 }
 ```
 
 **2、使用 instanceof 操作符**
 
 ```javascript
-var cars=new Array();
-cars[0]="Saab";
-cars[1]="Volvo";
-cars[2]="BMW";
+var cars = new Array();
+cars[0] = "Saab";
+cars[1] = "Volvo";
+cars[2] = "BMW";
 
 if (cars instanceof Array) {
     document.write("该对象是一个数组。") ;
@@ -1561,7 +1435,7 @@ if (cars instanceof Array) {
 
 ---
 
-注意 `undefined `和 `null `都是小写，并且。
+注意 `undefined`和 `null`都是小写，并且。
 
 ```javascript
 var x, y;
@@ -1573,7 +1447,7 @@ if(y == undefined){
 }
 ```
 
-二者都会输出 **undefined**
+二者都会输出 `undefined`
 
 ---
 
@@ -1582,7 +1456,7 @@ if(y == undefined){
 ```javascript
 var a = 100;
 var c = a.toString();
-alert(typeof(c));      //typeof()方法验证转换后的数据类型
+typeof(c); //"string"
 ```
 
 使用 `parseInt()` 和 `parseFloat()` 方法可以把字符串转换为数值。
@@ -1605,7 +1479,7 @@ JavaScript 对象是拥有属性和方法的数据。
 
 在 JavaScript中，几乎所有的事物都是对象。
 
-以下代码为变量 **car** 设置值为 "Fiat" :
+以下代码为变量 *car* 设置值为 "`Fiat`" :
 
 ```javascript
 var car = "Fiat";
@@ -1653,9 +1527,6 @@ var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
 
 ```javascript
 person.lastName;
-```
-
-```javascript
 person["lastName"];
 ```
 
@@ -1699,7 +1570,7 @@ objectName.methodName()
 
 ---
 
-JavaScript对象:属性和方法的容器;
+JavaScript对象: 属性和方法的容器;
 
 对象的属性之间一定要用逗号隔开;
 
@@ -1734,7 +1605,7 @@ person.method = function () {
 
 ---
 
-JavaScript对象中属性具有唯一性（这里的属性包括方法），如果有两个重复的属性，则以最后赋值为准。比如同时存在两个play:
+JavaScript对象中属性具有唯一性（这里的属性包括方法），如果有两个重复的属性，则以最后赋值为准。比如同时存在两个`play`:
 
 ```javascript
 var person = {
@@ -1749,24 +1620,6 @@ var person = {
 ```
 
 ----
-
-JavaScript 对象是键值对的容器，“键”必须为字符串，“值”可以是 JavaScript 中除 null 和 undefined 以外的任意数据类型。
-
-代码实例：
-
-```javascript
-var bird = {
-    "name" : "Amy",
-    "age" : 1,
-    "color" : "white",
-    "skill" : function () {
-        console.log("Fly");
-    },
-    "nickname" : null //非法
-}
-```
-
----
 
 使用 **var name = person.fullName();** 调用对象函数时，fullName 会被立即执行：
 
@@ -1785,7 +1638,7 @@ var name = person.fullName();
 console.log(name);
 ```
 
-控制台会先打印 **person.fullName** ，再打印 **name**。
+控制台会先打印 **person.fullName** ，再打印 **undefined**。
 
 ---
 
@@ -1795,11 +1648,10 @@ console.log(name);
 
 ## JavaScript 函数语法
 
-函数就是包裹在花括号中的代码块，前面使用了关键词 function：
+函数就是包裹在花括号中的代码块，前面使用了关键词 `function`：
 
 ```javascript
-function functionname()
-{
+function functionname() {
   // 执行代码
 }
 ```
@@ -1814,7 +1666,7 @@ function functionname()
 
 这些参数可以在函数中使用。
 
-您可以发送任意多的参数，由逗号 (,) 分隔：
+您可以发送任意多的参数，由逗号` (,)` 分隔：
 
 ```javascript
 myFunction(argument1, argument2)
@@ -1823,8 +1675,8 @@ myFunction(argument1, argument2)
 当您声明函数时，请把参数作为变量来声明：
 
 ```javascript
-function myFunction(var1,var2) {
-	// 代码
+function myFunction(var1, var2) {
+    // 代码
 }
 ```
 
@@ -1860,8 +1712,7 @@ function myFunction(name,job){
 在使用 return 语句时，函数会停止执行，并返回指定的值。
 
 ```javascript
-function myFunction()
-{
+function myFunction() {
   var x=5;
   return x;
 }
@@ -1885,18 +1736,18 @@ var myVar = myFunction();
 document.getElementById("demo").innerHTML=myFunction();
 ```
 
-"demo" 元素的 innerHTML 将成为 5，也就是函数 "myFunction()" 所返回的值。
+"`demo`" 元素的 `innerHTML `将成为 5，也就是函数 "myFunction()" 所返回的值。
 
 您可以使返回值基于传递到函数中的参数：
 
 ```javascript
-function myFunction(a,b) {
+function myFunction(a, b) {
     return a*b;
 }
 document.getElementById("demo").innerHTML=myFunction(4,3);
 ```
 
-"demo" 元素的 innerHTML 将是：
+"`demo`" 元素的 `innerHTML `将是：
 
 ```
 12
@@ -1917,7 +1768,7 @@ function myFunction(a,b) {
 
 ## 局部 JavaScript 变量
 
-在 JavaScript 函数内部声明的变量（使用 var）是*局部*变量，所以只能在函数内部访问它。（该变量的作用域是局部的）。
+在 JavaScript 函数内部声明的变量（使用 `var`）是*局部*变量，所以只能在函数内部访问它。（该变量的作用域是局部的）。
 
 您可以在不同的函数中使用名称相同的局部变量，因为只有声明过该变量的函数才能识别出该变量。
 
@@ -1937,7 +1788,7 @@ JavaScript 变量的生命期从它们被声明的时间开始。
 
 ## 向未声明的 JavaScript 变量分配值
 
-如果您把值赋给尚未声明的变量，该变量将被自动作为 window 的一个属性。
+如果您把值赋给尚未声明的变量，该变量将被自动作为 `window `的一个属性。
 
 这条语句：
 
@@ -1945,7 +1796,7 @@ JavaScript 变量的生命期从它们被声明的时间开始。
 carname = "Volvo";
 ```
 
-将声明 window 的一个属性 carname。
+将声明 `window `的一个属性 `carname`。
 
 非严格模式下给未声明变量赋值创建的全局变量，是全局对象的可配置属性，可以删除。
 
@@ -1969,13 +1820,13 @@ console.log(var2); // 已经删除 报错变量未定义
 在使用 `return `语句时，函数会停止执行，并返回指定的值。例如：
 
 ```javascript
-function sayHi(name,message) {
+function sayHi(name, message) {
     document.write("return 语句执行前。");
     return;
     alert("hello" + name + "," + message);//这一行永远不会被调用
 }
 
-sayHi();
+sayHi('xxx', 'This is a test');
 ```
 
 ----
@@ -2041,10 +1892,10 @@ function getSecondNumber() {
     </tr>
     <tr>
         <td colspan="2">
-            &nbsp;<button style="width: inherit" onclick="add()">+</button>
-            &nbsp;<button style="width: inherit" onclick="subract()">-</button>
-            &nbsp;<button style="width: inherit" onclick="multiply()">*</button>
-            &nbsp;<button style="width: inherit" onclick="devide()">/</button>
+             <button style="width: inherit" onclick="add()">+</button>
+             <button style="width: inherit" onclick="subract()">-</button>
+             <button style="width: inherit" onclick="multiply()">*</button>
+             <button style="width: inherit" onclick="devide()">/</button>
         </td>
     </tr>
     <tr>
@@ -2238,7 +2089,7 @@ function myFunction() {
 
 ```javascript
 var carName = " Volvo";
- 
+
 // 此处可调用 carName 变量
 function myFunction() {
     // 函数内可调用 carName 变量
@@ -2251,7 +2102,7 @@ function myFunction() {
 
 ```javascript
 // 此处可调用 carName 变量
- 
+
 function myFunction() {
     carName = "Volvo";
     // 此处可调用 carName 变量
@@ -2276,7 +2127,6 @@ JavaScript 变量生命周期在它声明时初始化。
 
 ```javascript
 //此处可使用 window.carName
- 
 function myFunction() {
     carName = "Volvo";
 }
@@ -2432,7 +2282,7 @@ JavaScript代码通常是几行代码。比较常见的是通过事件属性来�
 <p id="demo"></p>
 <script>
 function displayDate(){
-	document.getElementById("demo").innerHTML=Date();
+    document.getElementById("demo").innerHTML=Date();
 }
 </script>
 ```
@@ -2441,14 +2291,14 @@ function displayDate(){
 
 下面是一些常见的HTML事件的列表:
 
-| 事件          | 描述                         |
-| :------------ | :--------------------------- |
-| `onchange`    | HTML 元素改变                |
-| `onclick`     | 用户点击 HTML 元素           |
+| 事件            | 描述               |
+|:------------- |:---------------- |
+| `onchange`    | HTML 元素改变        |
+| `onclick`     | 用户点击 HTML 元素     |
 | `onmouseover` | 用户在一个HTML元素上移动鼠标 |
 | `onmouseout`  | 用户从一个HTML元素上移开鼠标 |
-| `onkeydown`   | 用户按下键盘按键             |
-| `onload`      | 浏览器已完成页面的加载       |
+| `onkeydown`   | 用户按下键盘按键         |
+| `onload`      | 浏览器已完成页面的加载      |
 
 ## JavaScript 可以做什么?
 
@@ -2586,16 +2436,16 @@ var sln = txt.length;
 
 下表中列举了在字符串中可以使用转义字符转义的特殊字符：
 
-| 代码 | 输出        |
-| :--- | :---------- |
+| 代码   | 输出       |
+|:---- |:-------- |
 | `\'` | 单引号      |
 | `\"` | 双引号      |
 | `\\` | 反斜杠      |
-| `\n` | 换行        |
-| `\r`   | 回车        |
-| `\t`   | tab(制表符) |
-| `\b`   | 退格符      |
-| `\f`   | 换页符      |
+| `\n` | 换行       |
+| `\r` | 回车       |
+| `\t` | tab(制表符) |
+| `\b` | 退格符      |
+| `\f` | 换页符      |
 
 ## 字符串可以是对象
 
@@ -2642,37 +2492,37 @@ document.getElementById("demo").innerHTML = x===y;
 
 ## 字符串属性
 
-| 属性          | 描述                       |
-| :------------ | :------------------------- |
-| `constructor` | 返回创建字符串属性的函数   |
-| `length`      | 返回字符串的长度           |
+| 属性            | 描述            |
+|:------------- |:------------- |
+| `constructor` | 返回创建字符串属性的函数  |
+| `length`      | 返回字符串的长度      |
 | `prototype`   | 允许您向对象添加属性和方法 |
 
 ## 字符串方法
 
-| 方法                  | 描述                                                         |
-| :-------------------- | :----------------------------------------------------------- |
-| `charAt()`            | 返回指定索引位置的字符                                       |
-| `charCodeAt()`        | 返回指定索引位置字符的 Unicode 值                            |
-| `concat()`            | 连接两个或多个字符串，返回连接后的字符串                     |
-| `fromCharCode()`      | 将 Unicode 转换为字符串                                      |
-| `indexOf()`           | 返回字符串中检索指定字符第一次出现的位置                     |
-| `lastIndexOf()`       | 返回字符串中检索指定字符最后一次出现的位置                   |
+| 方法                    | 描述                                           |
+|:--------------------- |:-------------------------------------------- |
+| `charAt()`            | 返回指定索引位置的字符                                  |
+| `charCodeAt()`        | 返回指定索引位置字符的 Unicode 值                        |
+| `concat()`            | 连接两个或多个字符串，返回连接后的字符串                         |
+| `fromCharCode()`      | 将 Unicode 转换为字符串                             |
+| `indexOf()`           | 返回字符串中检索指定字符第一次出现的位置                         |
+| `lastIndexOf()`       | 返回字符串中检索指定字符最后一次出现的位置                        |
 | `localeCompare()`     | 用本地特定的顺序来比较两个字符串                             |
-| `match()`             | 找到一个或多个正则表达式的匹配                               |
-| `replace()`           | 替换与正则表达式匹配的子串                                   |
-| `search()`            | 检索与正则表达式相匹配的值                                   |
-| `slice()`             | 提取字符串的片断，并在新的字符串中返回被提取的部分           |
-| `split()`             | 把字符串分割为子字符串数组                                   |
-| `substr()`            | 从起始索引号提取字符串中指定数目的字符                       |
-| `substring()`         | 提取字符串中两个指定的索引号之间的字符                       |
+| `match()`             | 找到一个或多个正则表达式的匹配                              |
+| `replace()`           | 替换与正则表达式匹配的子串                                |
+| `search()`            | 检索与正则表达式相匹配的值                                |
+| `slice()`             | 提取字符串的片断，并在新的字符串中返回被提取的部分                    |
+| `split()`             | 把字符串分割为子字符串数组                                |
+| `substr()`            | 从起始索引号提取字符串中指定数目的字符                          |
+| `substring()`         | 提取字符串中两个指定的索引号之间的字符                          |
 | `toLocaleLowerCase()` | 根据主机的语言环境把字符串转换为小写，只有几种语言（如土耳其语）具有地方特有的大小写映射 |
 | `toLocaleUpperCase()` | 根据主机的语言环境把字符串转换为大写，只有几种语言（如土耳其语）具有地方特有的大小写映射 |
-| `toLowerCase()`       | 把字符串转换为小写                                           |
-| `toString()`          | 返回字符串对象值                                             |
-| `toUpperCase()`       | 把字符串转换为大写                                           |
-| `trim()`              | 移除字符串首尾空白                                           |
-| `valueOf()`           | 返回某个字符串对象的原始值                                   |
+| `toLowerCase()`       | 把字符串转换为小写                                    |
+| `toString()`          | 返回字符串对象值                                     |
+| `toUpperCase()`       | 把字符串转换为大写                                    |
+| `trim()`              | 移除字符串首尾空白                                    |
+| `valueOf()`           | 返回某个字符串对象的原始值                                |
 
 ---
 
@@ -2681,14 +2531,14 @@ document.getElementById("demo").innerHTML = x===y;
 1、对于 `string`、`number `等基础类型，`==` 和 `===` 是有区别的
 
 - a）不同类型间比较，`==` 之比较 "转化成同一类型后的值" 看 "值" 是否相等，`===` 如果类型不同，其结果就是不等。
--  b）同类型比较，直接进行 "值" 比较，两者结果一样。
+- b）同类型比较，直接进行 "值" 比较，两者结果一样。
 
 2、对于 `Array`,`Object` 等高级类型，`==` 和 `=== `是没有区别的，进行 "指针地址" 比较
 
 3、基础类型与高级类型，== 和 === 是有区别的
 
 - a）对于 ==，将高级转化为基础类型，进行 "值" 比较
--  b）因为类型不同，=== 结果为 false
+- b）因为类型不同，=== 结果为 false
 
 4、`!=` 为 `==` 的非运算，`!==` 为 `===` 的非运算
 
@@ -2710,21 +2560,21 @@ num !== str  //true   num 与 str类型不同 意味着其两者不等　非运�
 ---
 
 ```javascript
-var x = "JohnJohn";     	// x 是字符串
-y = x.charAt(2);        	// h
-y = x.charCodeAt(2);    	// 104
-y = x.concat(y, y);     	// JohnJohn104104, x+y+y
-y = x.indexOf('h');     	// 2, 索引从0开始
-y = x.lastIndexOf('h'); 	// 6
-y = x.slice();
-y = x.split('o');       	//J,hnJ,hn
-y = x.substr(2);  			// hnJohn
-y = x.substring(2,4);   	// hn，[2,3]
-y = x.toLocaleLowerCase();  // johnjohn,小写
-y = x.toLocaleUpperCase();  // JOHNJOHN,大写
+var x = "JohnJohn";         // x 是字符串
+y = x.charAt(2);            // h
+y = x.charCodeAt(2);        // 104
+y = x.concat(y, y);         // JohnJohn104104, #x+y+y
+y = x.indexOf('h');         // 2, 索引从0开始
+y = x.lastIndexOf('h');     // 6
+y = x.slice(0, 2);          // Jo
+y = x.split('o');           // J,hnJ,hn
+y = x.substr(2);            // hnJohn
+y = x.substring(2,4);       // hn，[2,3]
+y = x.toLocaleLowerCase();  // johnjohn, #小写
+y = x.toLocaleUpperCase();  // JOHNJOHN, #大写
 y = x.toString();           // 转成Stirng
-y = x.toUpperCase();        // JOHNJOHN,大写
-y = x.trim();               // JohnJohn,去除两端的空格
+y = x.toUpperCase();        // JOHNJOHN, #大写
+y = x.trim();               // JohnJohn, #去除两端的空格
 y = x.valueOf();            // 返回某个字符串对象的原始值
 ```
 
@@ -2734,15 +2584,15 @@ y = x.valueOf();            // 返回某个字符串对象的原始值
 
 ## 用于字符串的 + 运算符
 
-\+ 运算符用于把文本值或字符串变量加起来（连接起来）。
+`+` 运算符用于把文本值或字符串变量加起来（连接起来）。
 
-如需把两个或多个字符串变量连接起来，请使用 + 运算符。
+如需把两个或多个字符串变量连接起来，请使用 `+` 运算符。
 
 ```javascript
 txt1 = "What a very";
 txt2 = "nice day";
 txt3 = txt1 + txt2;
-// What a verynice day
+// "What a verynice day"
 ```
 
 要想在两个字符串之间增加空格，需要把空格插入一个字符串之中：
@@ -2751,10 +2601,10 @@ txt3 = txt1 + txt2;
 txt1 = "What a very ";
 txt2 = "nice day";
 txt3 = txt1 + txt2;
-// What a very nice day
+// "What a very nice day&quot;
 ```
 
-或者把空格插入表达式中：:
+或者把空格插入表达式中:
 
 ```javascript
 txt1 = "What a very";
@@ -2781,7 +2631,7 @@ z = "Hello" + 5;
 Hello5
 ```
 
-**规则:**如果把数字与字符串相加，结果将成为字符串！
+**规则：** 如果把数字与字符串相加，结果将成为字符串！
 
 ---
 
@@ -2814,7 +2664,7 @@ var result3="       "+5;  // 得到的结果是"       5"
 
 6、求模 **%** 运算，运算结果只取决于第一个数字的正负。
 
-```
+```javascript
 -12 % -8 = -4; 
 12 % -8 =  4;
 -12 % 8 = -4;
@@ -2824,7 +2674,7 @@ var result3="       "+5;  // 得到的结果是"       5"
 
 打开网页后 F12 进行开发调试环境，找到 console 标签页面，执行：
 
-```
+```javascript
 var str = new String('string');   
 str 
 ```
@@ -2875,13 +2725,13 @@ str
     </tr>
     <tr>
         <td style="vertical-align: top">!=</td>
-        <td style="vertical-align: top">&nbsp;不等于</td>
+        <td style="vertical-align: top"> 不等于</td>
         <td style="vertical-align: top">x!=8</td>
         <td style="vertical-align: top"><em>true</em></td>
     </tr>
     <tr>
         <td style="vertical-align: top" rowspan="2">!==</td>
-        <td style="vertical-align: top" rowspan="2">&nbsp;不绝对等于（值和类型有一个不相等，或两个都不相等）</td>
+        <td style="vertical-align: top" rowspan="2"> 不绝对等于（值和类型有一个不相等，或两个都不相等）</td>
         <td style="vertical-align: top">x!=="5"</td>
         <td style="vertical-align: top"><em>true</em></td>
     </tr>
@@ -2890,32 +2740,31 @@ str
     <td style="vertical-align: top"><em>false</em></td>
     </tr>
     <tr style="background-color:#ffffff">
-        <td style="vertical-align: top">&gt;</td>
-        <td style="vertical-align: top">&nbsp;大于</td>
-        <td style="vertical-align: top">x&gt;8</td>
+        <td style="vertical-align: top">></td>
+        <td style="vertical-align: top"> 大于</td>
+        <td style="vertical-align: top">x>8</td>
         <td style="vertical-align: top"><em>false</em></td>
     </tr>
     <tr class="fixzebra">
-        <td style="vertical-align: top">&lt;</td>
-        <td style="vertical-align: top">&nbsp;小于</td>
-        <td style="vertical-align: top">x&lt;8</td>
+        <td style="vertical-align: top"><</td>
+        <td style="vertical-align: top"> 小于</td>
+        <td style="vertical-align: top">x<8</td>
         <td style="vertical-align: top"><em>true</em></td>
     </tr>
     <tr style="background-color:#ffffff">
-        <td style="vertical-align: top">&gt;=</td>
-        <td style="vertical-align: top">&nbsp;大于或等于</td>
-        <td style="vertical-align: top">x&gt;=8</td>
+        <td style="vertical-align: top">>=</td>
+        <td style="vertical-align: top"> 大于或等于</td>
+        <td style="vertical-align: top">x>=8</td>
         <td style="vertical-align: top"><em>false</em></td>
     </tr>
         <tr class="fixzebra">
-        <td style="vertical-align: top">&lt;=</td>
-        <td style="vertical-align: top">&nbsp;小于或等于</td>
-        <td style="vertical-align: top">x&lt;=8</td>
+        <td style="vertical-align: top"><=</td>
+        <td style="vertical-align: top"> 小于或等于</td>
+        <td style="vertical-align: top">x<=8</td>
         <td style="vertical-align: top"><em>true</em></td>
     </tr>
     </tbody>
 </table>
-
 ------
 
 ## 如何使用
@@ -2934,11 +2783,11 @@ if (age<18) x="Too young";
 
 给定 x=6 以及 y=3，下表解释了逻辑运算符：
 
-| 运算符 | 描述 | 例子                        |
-| :----- | :--- | :-------------------------- |
-| `&&`   | and  | `(x < 10 && y > 1)` 为 true |
-| `||`   | or   | `(x==5 || y==5)` 为 false   |
-| `!`    | not  | `!(x==y)` 为 true           |
+| 运算符  | 描述  | 例子                         |
+|:---- |:--- |:-------------------------- |
+| `&&` | and | `(x < 10 && y > 1)` 为 true |
+| `    |     | `                          |
+| `!`  | not | `!(x==y)` 为 true           |
 
 ## 条件运算符
 
@@ -2962,8 +2811,8 @@ voteable = (age<18) ? "年龄太小" : "年龄已达到";
 
 ```javascript
 function test(p){
-    var a=5,b=12;
-    return p>1 ? p<b?p>b:p=6 : p=3; // 这一行中出现了多个问号和冒号，看起来很乱怎么办呢
+    var a=5, b=12;
+    return p>1 ? p<b ? p>b:p=6 : p=3; // 这一行中出现了多个问号和冒号，看起来很乱怎么办呢
 }
 
 document.write(test(9));
@@ -2974,15 +2823,14 @@ document.write(test(9));
 就成了这样:
 
 ```javascript
-p>1?p<b?p>b:p=6:p=3
-
-p>1? 整体 :p=3
+p>1 ? p<b?p>b:p=6: p=3
+p>1 ? 整体: p=3
 ```
 
-1、当 `p>1` 时返回` p<b ? p>b : p=6`
+1、当 `p>1` 时返回` p<b ? p>b: p=6`
 
 - 1.1、当` p<b` 时返回` p>b`
--  1.2、当 `p>=b` 时返回 `p=6`
+- 1.2、当 `p>=b` 时返回 `p=6`
 
 2、当 `p<=1` 是返回 `p=3` 所以先执行 1
 

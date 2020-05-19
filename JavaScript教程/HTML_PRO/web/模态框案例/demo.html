@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+<button id="btn">点我一下</button>
+</body>
+<script>
+    var oDiv = document.createElement('div');
+    var oP = document.createElement('p');
+    var oSpan = document.createElement('span');
+    var btn = document.getElementById('btn');
+    var body = document.getElementsByTagName('body');
+
+    btn.onclick = function () {
+        oP.innerHTML = 'This is True music';
+        oSpan.innerHTML = 'X';
+        
+        oDiv.appendChild(oP);
+        oP.appendChild(oSpan);
+        
+        oDiv.id = 'wrapper';
+        oP.id = 'p1';
+        oSpan.id = 'span1';
+
+        body[0].insertBefore(oDiv, btn);
+    };
+    oSpan.onclick = function () {
+        body[0].removeChild(oDiv);
+    };
+</script>
+</html>

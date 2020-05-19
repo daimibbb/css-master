@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+<div class="wrapper">
+    <ul>
+        <li class="active"><a href="#">宝贝</a></li>
+        <li><a href="#">天猫</a></li>
+        <li><a href="#">店铺</a></li>
+    </ul>
+    <div class="search">
+        <input type="text" id="txt">
+        <label for="txt" id="lab">请输入要购买的商品</label>
+    </div>
+</div>
+</body>
+<script>
+    var lis = document.getElementsByTagName('li');
+    for (var i=0; i<lis.length; i++) {
+        lis[i].onclick = function () {
+            for (var j=0; j<lis.length; j++) {
+                lis[j].className = '';
+            }
+            this.className = 'active';
+        }
+    }
+    var txt = document.getElementById('txt');
+    var lab = document.getElementById('lab');
+    txt.oninput = function() {
+        if (this.value ==='') {
+            lab.style.display = 'block';
+        } else {
+            lab.style.display = 'none'
+        }
+    }
+</script>
+</html>

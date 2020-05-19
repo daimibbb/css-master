@@ -1,0 +1,13 @@
+img {
+    position: fixed;
+    top: 0;
+}
+#pic1 {
+    right: 0;
+}
+pic2 {
+    left: 0;
+}
+p {
+    font-size: 30px;
+}
